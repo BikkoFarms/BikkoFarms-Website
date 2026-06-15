@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, TrendingUp, Zap, Clock } from 'lucide-react';
+import { ArrowRight, Sparkles, TrendingUp, Zap, Clock, Sprout } from 'lucide-react';
 import { Button } from '../ui/button';
 import { useAnalytics } from '../shared/Analytics';
 
