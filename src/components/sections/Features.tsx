@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { motion } from 'framer-motion';
 import { MessageSquare, Phone, Sprout, Zap, Wallet, BarChart3, Globe, ShieldCheck } from 'lucide-react';
 
 export function Features() {
@@ -60,7 +61,13 @@ export function Features() {
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Title */}
-        <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.45 }}
+          className="max-w-3xl mx-auto text-center space-y-4 mb-16"
+        >
           <span className="text-xs font-bold uppercase tracking-wider text-brand-green-500 font-mono">TECHNICAL SPECIFICATIONS</span>
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-text-primary tracking-tight">
             Built for Scale and Field Resiliency
@@ -68,16 +75,20 @@ export function Features() {
           <p className="text-text-secondary text-sm md:text-base leading-relaxed">
             Combining state-of-the-art blockchain technology with the existing mobile interfaces agricultural communities use daily.
           </p>
-        </div>
+        </motion.div>
 
         {/* Feature Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {featuresList.map((feature, idx) => {
             const Icon = feature.icon;
             return (
-              <div
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.4, delay: (idx % 4) * 0.08 }}
                 key={idx}
-                className="bg-neutral-card border border-neutral-border p-6 rounded-2xl space-y-4 shadow-sm hover:border-brand-green-500/30 hover:shadow-md transition-all duration-200 group"
+                className="bg-neutral-card border border-neutral-border p-6 rounded-2xl space-y-4 shadow-sm hover:border-brand-green-500/30 hover:shadow-md transition-all duration-200 group hover:scale-[1.01]"
               >
                 <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-transform group-hover:scale-105 ${feature.color}`}>
                   <Icon className="w-5 h-5" />
@@ -86,7 +97,7 @@ export function Features() {
                   <h4 className="font-serif font-bold text-text-primary text-base tracking-tight">{feature.title}</h4>
                   <p className="text-xs text-text-secondary leading-relaxed">{feature.desc}</p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

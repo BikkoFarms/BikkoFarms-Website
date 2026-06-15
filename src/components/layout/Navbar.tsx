@@ -25,7 +25,7 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Kofi\'s Story', href: '#story' },
+    { name: "Kofi's Story", href: '#story' },
     { name: 'How It Works', href: '#how-it-works' },
     { name: 'Features', href: '#features' },
     { name: 'Impact', href: '#impact' },

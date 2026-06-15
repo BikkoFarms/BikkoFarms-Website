@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { motion } from 'framer-motion';
 import { ArrowRight, Sprout, ShieldCheck, Cpu, Wallet, RefreshCw } from 'lucide-react';
 
 export function Solution() {
@@ -42,7 +43,13 @@ export function Solution() {
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Title */}
-        <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.45 }}
+          className="max-w-3xl mx-auto text-center space-y-4 mb-16"
+        >
           <span className="text-xs font-bold uppercase tracking-wider text-brand-green-500">THE PROTOCOL LAYER</span>
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-text-primary tracking-tight">
             How BikkoChain Bridges the Gap
@@ -50,7 +57,7 @@ export function Solution() {
           <p className="text-text-secondary text-sm md:text-base leading-relaxed">
             By turning future physical harvests into digital collateral assets, we connect smallholder coffee and cocoa farmers directly to global liquidity protocols in a five-step secure pipeline.
           </p>
-        </div>
+        </motion.div>
 
         {/* Process Timeline Card Flow */}
         <div className="relative">
@@ -62,7 +69,14 @@ export function Solution() {
             {steps.map((step, idx) => {
               const Icon = step.icon;
               return (
-                <div key={idx} className="bg-neutral-card border border-neutral-border p-6 rounded-2xl flex flex-col justify-between space-y-4 shadow-sm hover:shadow-md transition-shadow relative">
+                <motion.div
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.45, delay: idx * 0.1 }}
+                  key={idx}
+                  className="bg-neutral-card border border-neutral-border p-6 rounded-2xl flex flex-col justify-between space-y-4 shadow-sm hover:shadow-md transition-shadow relative"
+                >
                   
                   {/* Number Badge */}
                   <div className="absolute top-4 right-4 text-xs font-mono font-bold text-text-muted">
@@ -87,7 +101,7 @@ export function Solution() {
                       <ArrowRight className="w-4 h-4" />
                     </div>
                   )}
-                </div>
+                </motion.div>
               );
             })}
           </div>

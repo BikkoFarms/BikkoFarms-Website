@@ -129,7 +129,7 @@ export function Footer() {
         <div className="border-t border-neutral-border/60 pt-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2 max-w-2xl">
             <p className="text-xs text-text-secondary leading-relaxed">
-              **Lending Disclosure:** Loans issued through the BikkoChain protocol are collateralized by certified crop agreements verified by cooperative inspectors. Interest rates are determined dynamically on-chain and disburse in Cedis through licensed local mobile money operators.
+              <strong className="font-semibold text-text-primary">Lending Disclosure:</strong> Loans issued through the BikkoChain protocol are collateralized by certified crop agreements verified by cooperative inspectors. Interest rates are determined dynamically on-chain and disburse in Cedis through licensed local mobile money operators.
             </p>
             <p className="text-[10px] text-text-muted">
               © {currentYear} BikkoChain Organization. All rights reserved. Registered Agritech microfinance provider in Ghana.

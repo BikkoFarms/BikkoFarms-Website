@@ -6,7 +6,7 @@ import { Quote } from 'lucide-react';
 export function Testimonials() {
   const reviews = [
     {
-      quote: "BikkoChain has completely changed how our cooperative works. We used to wait weeks for bank approvals to distribute seeds and tools. Now, we tokenize the harvest contract, and the capital is in the farmer\'s hands in minutes.",
+      quote: "BikkoChain has completely changed how our cooperative works. We used to wait weeks for bank approvals to distribute seeds and tools. Now, we tokenize the harvest contract, and the capital is in the farmer's hands in minutes.",
       author: "Emmanuel Boakye",
       role: "Agricultural Co-op Supervisor",
       location: "Sefwi Wiawso, Ghana",

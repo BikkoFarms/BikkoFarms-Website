@@ -100,7 +100,11 @@ export function Hero() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.25 }}
           className="lg:col-span-5 relative w-full"
         >
-          <div className="bg-neutral-card/60 backdrop-blur-sm border border-neutral-border p-6 rounded-2xl shadow-xl space-y-6">
+          <motion.div
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className="bg-neutral-card/60 backdrop-blur-sm border border-neutral-border p-6 rounded-2xl shadow-xl space-y-6"
+          >
             
             {/* Display header */}
             <div className="flex items-center justify-between pb-4 border-b border-neutral-border/40">
@@ -156,7 +160,7 @@ export function Hero() {
               <p className="text-text-secondary">Ghana Cocoa Board partners with BikkoChain pilots</p>
             </div>
 
-          </div>
+          </motion.div>
         </motion.div>
 
       </div>
