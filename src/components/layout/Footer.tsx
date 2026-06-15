@@ -39,9 +39,9 @@ export function Footer() {
   return (
     <footer className="bg-neutral-bg border-t border-neutral-border py-16 relative overflow-hidden">
       {/* Decorative Blur */}
-      <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-brand-green-500/5 glow-blur -z-10" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-brand-green-500/5 glow-blur z-0" />
       
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12 mb-12">
           
           {/* Brand & Tagline */}

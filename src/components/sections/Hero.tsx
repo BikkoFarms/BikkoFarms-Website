@@ -56,10 +56,10 @@ export function Hero() {
   return (
     <section className="relative min-h-[95vh] flex items-center pt-32 pb-20 overflow-hidden">
       {/* Visual background glows */}
-      <div className="absolute top-1/4 left-1/4 w-[350px]. h-[350px] rounded-full bg-brand-green-500/10 glow-blur -z-10 animate-pulse" />
-      <div className="absolute top-1/3 right-1/4 w-[450px] h-[450px] rounded-full bg-brand-lisk/10 glow-blur -z-10" />
+      <div className="absolute top-1/4 left-1/4 w-[350px] h-[350px] rounded-full bg-brand-green-500/10 glow-blur z-0 animate-pulse" />
+      <div className="absolute top-1/3 right-1/4 w-[450px] h-[450px] rounded-full bg-brand-lisk/10 glow-blur z-0" />
 
-      <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
         
         {/* Copy Content (Left Column) */}
         <motion.div
@@ -172,7 +172,7 @@ export function Hero() {
                       </div>
                       <h4 className="font-serif font-bold text-text-primary text-base">Physical Harvest Contract</h4>
                       <p className="text-xs text-text-secondary max-w-[280px] mx-auto leading-relaxed">
-                        Inspector verified crop yields from Kofi Mensah\'s farm aggregates.
+                        Inspector verified crop yields from Kofi Mensah's farm aggregates.
                       </p>
                     </div>
 

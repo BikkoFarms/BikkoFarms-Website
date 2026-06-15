@@ -94,53 +94,55 @@ export function Features() {
                 className={`bg-neutral-card border border-neutral-border p-6 rounded-2xl flex flex-col justify-between hover:border-brand-green-500/20 transition-all duration-300 group ${feat.size} relative overflow-hidden`}
               >
                 {/* Background soft hover glow */}
-                <div className="absolute inset-0 bg-gradient-to-br from-brand-green-500/0 via-brand-green-500/0 to-brand-green-500/2 group-hover:to-brand-green-500/5 transition-all duration-300 -z-10" />
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-green-500/0 via-brand-green-500/0 to-brand-green-500/2 group-hover:to-brand-green-500/5 transition-all duration-300 z-0" />
 
-                <div className="space-y-4">
-                  {/* Icon container */}
-                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center border transition-transform group-hover:scale-105 ${feat.color}`}>
-                    <Icon className="w-5 h-5" />
+                <div className="relative z-10 flex flex-col justify-between h-full w-full">
+                  <div className="space-y-4">
+                    {/* Icon container */}
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center border transition-transform group-hover:scale-105 ${feat.color}`}>
+                      <Icon className="w-5 h-5" />
+                    </div>
+
+                    <div className="space-y-2">
+                      <h4 className="font-serif font-bold text-text-primary text-lg tracking-tight">{feat.title}</h4>
+                      <p className="text-xs text-text-secondary leading-relaxed max-w-2xl">{feat.desc}</p>
+                    </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <h4 className="font-serif font-bold text-text-primary text-lg tracking-tight">{feat.title}</h4>
-                    <p className="text-xs text-text-secondary leading-relaxed max-w-2xl">{feat.desc}</p>
-                  </div>
+                  {/* Custom highlights for Bento boxes */}
+                  {feat.highlight && (
+                    <div className="mt-6 bg-neutral-bg/60 border border-neutral-border/40 p-4 rounded-xl font-mono text-[11px] text-text-secondary space-y-1.5 animate-pulse">
+                      <p className="text-brand-amber-500 font-bold">USSD Session: *384*22#</p>
+                      <p>Welcome to BikkoChain.</p>
+                      <p>1. Check Repayment Deadline</p>
+                      <p>2. Request Harvest Disbursal [Pending]</p>
+                    </div>
+                  )}
+
+                  {feat.mapHighlight && (
+                    <div className="mt-6 border border-neutral-border/40 rounded-xl overflow-hidden bg-neutral-bg/60 p-4 grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                      <div className="md:col-span-8 flex flex-wrap gap-2 text-[10px] text-text-secondary">
+                        <div className="bg-neutral-card border border-neutral-border px-2.5 py-1 rounded-md flex items-center gap-1">
+                          <MapPin className="w-3 h-3 text-brand-green-500" />
+                          <span>Sefwi Wiawso Boundary Plot: OK-028</span>
+                        </div>
+                        <div className="bg-neutral-card border border-neutral-border px-2.5 py-1 rounded-md flex items-center gap-1">
+                          <ShieldCheck className="w-3.5 h-3.5 text-brand-green-500" />
+                          <span>Forest Canopy Overlap: 0.00%</span>
+                        </div>
+                      </div>
+                      
+                      {/* Simulated visual radar */}
+                      <div className="md:col-span-4 flex justify-end">
+                        <div className="w-16 h-16 rounded-full border border-brand-green-500/30 flex items-center justify-center relative">
+                          <div className="w-8 h-8 rounded-full border border-brand-green-500/50 flex items-center justify-center" />
+                          <div className="w-2.5 h-2.5 bg-brand-green-500 rounded-full animate-ping absolute" />
+                          <div className="w-2 h-2 bg-brand-green-500 rounded-full absolute" />
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
-
-                {/* Custom highlights for Bento boxes */}
-                {feat.highlight && (
-                  <div className="mt-6 bg-neutral-bg/60 border border-neutral-border/40 p-4 rounded-xl font-mono text-[11px] text-text-secondary space-y-1.5 animate-pulse">
-                    <p className="text-brand-amber-500 font-bold">USSD Session: *384*22#</p>
-                    <p>Welcome to BikkoChain.</p>
-                    <p>1. Check Repayment Deadline</p>
-                    <p>2. Request Harvest Disbursal [Pending]</p>
-                  </div>
-                )}
-
-                {feat.mapHighlight && (
-                  <div className="mt-6 border border-neutral-border/40 rounded-xl overflow-hidden bg-neutral-bg/60 p-4 grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
-                    <div className="md:col-span-8 flex flex-wrap gap-2 text-[10px] text-text-secondary">
-                      <div className="bg-neutral-card border border-neutral-border px-2.5 py-1 rounded-md flex items-center gap-1">
-                        <MapPin className="w-3 h-3 text-brand-green-500" />
-                        <span>Sefwi Wiawso Boundary Plot: OK-028</span>
-                      </div>
-                      <div className="bg-neutral-card border border-neutral-border px-2.5 py-1 rounded-md flex items-center gap-1">
-                        <ShieldCheck className="w-3.5 h-3.5 text-brand-green-500" />
-                        <span>Forest Canopy Overlap: 0.00%</span>
-                      </div>
-                    </div>
-                    
-                    {/* Simulated visual radar */}
-                    <div className="md:col-span-4 flex justify-end">
-                      <div className="w-16 h-16 rounded-full border border-brand-green-500/30 flex items-center justify-center relative">
-                        <div className="w-8 h-8 rounded-full border border-brand-green-500/50 flex items-center justify-center" />
-                        <div className="w-2.5 h-2.5 bg-brand-green-500 rounded-full animate-ping absolute" />
-                        <div className="w-2 h-2 bg-brand-green-500 rounded-full absolute" />
-                      </div>
-                    </div>
-                  </div>
-                )}
               </motion.div>
             );
           })}

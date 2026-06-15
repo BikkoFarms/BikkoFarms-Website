@@ -34,10 +34,10 @@ export function CTASection() {
   return (
     <section id="contact" className="py-24 relative overflow-hidden bg-neutral-bg">
       {/* Background radial glow */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-brand-green-500/5 -z-10" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] rounded-full bg-brand-green-500/5 glow-blur -z-10 animate-pulse" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-brand-green-500/5 z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] rounded-full bg-brand-green-500/5 glow-blur z-0 animate-pulse" />
 
-      <div className="max-w-4xl mx-auto px-6 text-center">
+      <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

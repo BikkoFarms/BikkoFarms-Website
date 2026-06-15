@@ -63,9 +63,9 @@ export function Solution() {
         <div className="relative">
           
           {/* Horizontal line for desktop, hidden on mobile */}
-          <div className="hidden lg:block absolute top-1/2 left-[10%] right-[10%] h-0.5 bg-neutral-border/60 -translate-y-1/2 -z-10" />
+          <div className="hidden lg:block absolute top-1/2 left-[10%] right-[10%] h-0.5 bg-neutral-border/60 -translate-y-1/2 z-0" />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 items-stretch relative z-10">
             {steps.map((step, idx) => {
               const Icon = step.icon;
               return (
@@ -97,7 +97,7 @@ export function Solution() {
 
                   {/* Flow Arrow (For non-last items) */}
                   {idx < steps.length - 1 && (
-                    <div className="hidden lg:block absolute top-1/2 -right-4 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-neutral-card border border-neutral-border flex items-center justify-center text-brand-green-500 shadow-sm">
+                    <div className="hidden lg:flex absolute top-1/2 -right-4 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-neutral-card border border-neutral-border items-center justify-center text-brand-green-500 shadow-sm">
                       <ArrowRight className="w-4 h-4" />
                     </div>
                   )}

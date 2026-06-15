@@ -119,15 +119,15 @@ export function Impact() {
             className="lg:col-span-7 bg-neutral-card border border-neutral-border p-6 rounded-3xl h-[420px] flex items-center justify-center relative overflow-hidden shadow-md"
           >
             {/* Visual satellite radar grid line overrides */}
-            <div className="absolute inset-0 bg-linear-to-b from-brand-green-500/0 via-brand-green-500/0 to-brand-green-500/2 -z-10" />
-            <div className="absolute top-0 left-0 w-full h-full border border-neutral-border/20 grid grid-cols-6 grid-rows-6 pointer-events-none">
+            <div className="absolute inset-0 bg-linear-to-b from-brand-green-500/0 via-brand-green-500/0 to-brand-green-500/2 z-0" />
+            <div className="absolute top-0 left-0 w-full h-full border border-neutral-border/20 grid grid-cols-6 grid-rows-6 pointer-events-none z-0">
               {Array.from({ length: 36 }).map((_, i) => (
                 <div key={i} className="border-[0.5px] border-neutral-border/10" />
               ))}
             </div>
 
             {/* Ghana Simple SVG Map mock outline */}
-            <div className="w-[300px] h-[340px] relative">
+            <div className="w-[300px] h-[340px] relative z-10">
               <svg className="w-full h-full text-neutral-border/60 dark:text-neutral-border/30 hover:text-neutral-border transition-colors duration-300" viewBox="0 0 100 120" fill="none" stroke="currentColor" strokeWidth="1">
                 {/* Asymmetric stylized Ghanaian map paths */}
                 <path d="M25,20 L40,15 L60,18 L75,25 L80,45 L72,65 L85,85 L65,105 L50,100 L30,110 L20,95 L22,75 L15,55 L18,35 Z" fill="currentColor" fillOpacity="0.05" />

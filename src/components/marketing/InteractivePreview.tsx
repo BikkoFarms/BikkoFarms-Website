@@ -59,10 +59,11 @@ export function InteractivePreview() {
   return (
     <div className="w-full bg-neutral-card border border-neutral-border rounded-2xl shadow-xl overflow-hidden relative p-6 md:p-8">
       {/* Background glow blur */}
-      <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-brand-green-500/5 glow-blur -z-10" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-brand-lisk/5 glow-blur -z-10" />
+      <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-brand-green-500/5 glow-blur z-0" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-brand-lisk/5 glow-blur z-0" />
 
-      {/* Title */}
+      <div className="relative z-10 w-full h-full">
+        {/* Title */}
       <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 pb-6 border-b border-neutral-border/40 gap-4">
         <div>
           <span className="text-xs font-bold uppercase tracking-wider text-brand-green-500">Live Simulation</span>
@@ -222,7 +223,7 @@ export function InteractivePreview() {
                 <div className="flex items-center justify-between pb-3 border-b border-neutral-border/30">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full bg-brand-lisk" />
-                    <span className="text-xs font-mono font-semibold text-text-secondary">EVM ESCROW ESCAPE</span>
+                    <span className="text-xs font-mono font-semibold text-text-secondary">EVM ESCROW SECURED</span>
                   </div>
                   <span className="text-xs font-semibold text-brand-lisk bg-brand-lisk/10 px-2 py-0.5 rounded-md">LOCKED</span>
                 </div>
@@ -296,6 +297,7 @@ export function InteractivePreview() {
           </div>
 
         </div>
+      </div>
       </div>
     </div>
   );

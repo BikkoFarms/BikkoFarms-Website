@@ -3,6 +3,7 @@ import { Inter, Outfit } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '../components/layout/ThemeProvider';
 import { AnalyticsTracker } from '../components/shared/Analytics';
+import { Ambient3DBackground } from '../components/ui/Ambient3DBackground';
 
 // Load Inter for Sans interface typography
 const inter = Inter({
@@ -86,6 +87,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <AnalyticsTracker />
+          <Ambient3DBackground />
           {children}
         </ThemeProvider>
       </body>
