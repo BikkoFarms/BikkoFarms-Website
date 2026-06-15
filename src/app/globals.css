@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-green-50: #f0fdf4;
+  --color-brand-green-100: #dcfce7;
+  --color-brand-green-500: #16a34a;
+  --color-brand-green-600: #15803d;
+  --color-brand-green-700: #166534;
+  --color-brand-green-900: #14532d;
+
+  --color-brand-amber-50: #fffbeb;
+  --color-brand-amber-100: #fef3c7;
+  --color-brand-amber-500: #d97706;
+  --color-brand-amber-600: #b45309;
+  --color-brand-amber-700: #92400e;
+
+  --color-brand-lisk: #0ea5e9;
+  --color-brand-cyan: #06b6d4;
+
+  --color-neutral-bg: var(--background);
+  --color-neutral-fg: var(--foreground);
+  --color-neutral-card: var(--card);
+  --color-neutral-border: var(--border);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+
+  --font-serif: var(--font-serif), serif;
+}
+
+:root {
+  --background: #FAF9F6;
+  --foreground: #1c1917;
+  --card: #ffffff;
+  --border: #e2e0db;
+  --text-primary: #1c1917;
+  --text-secondary: #57534e;
+  --font-serif: 'Outfit';
+}
+
+html.dark {
+  --background: #040604;
+  --foreground: #fafaf9;
+  --card: #0b0f0c;
+  --border: #161e18;
+  --text-primary: #fafaf9;
+  --text-secondary: #a3a3a3;
+}
+
+/* Standard HTML structure overrides */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Accessibility visible focus classes */
+.focus-ring {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid #16a34a;
+  outline-offset: 4px;
+}
+
+/* Gradient text helpers */
+.gradient-text-green {
+  background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-amber {
+  background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-lisk {
+  background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Decorative background glow overlays */
+.glow-blur {
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #15803d;
+}
