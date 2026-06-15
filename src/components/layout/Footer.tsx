@@ -132,8 +132,15 @@ export function Footer() {
               <strong className="font-semibold text-text-primary">Lending Disclosure:</strong> Loans issued through the BikkoChain protocol are collateralized by certified crop agreements verified by cooperative inspectors. Interest rates are determined dynamically on-chain and disburse in Cedis through licensed local mobile money operators.
             </p>
             <p className="text-[10px] text-text-muted">
-              © {currentYear} BikkoChain Organization. All rights reserved. Registered Agritech microfinance provider in Ghana.
+              © {currentYear} BikkoChain Organization. All rights reserved. Registered agritech microfinance provider under GHS Ministry of Food and Agriculture (MoFA) pilot registries.
             </p>
+            <div className="flex flex-wrap gap-4 text-[9px] text-text-muted font-semibold tracking-wider uppercase font-mono pt-1">
+              <span>Licensed Pilot Operator (MoFA GH)</span>
+              <span>•</span>
+              <span>EUDR Forest Canopy Traceable</span>
+              <span>•</span>
+              <span>SEC RWA sandboxes compliant</span>
+            </div>
           </div>
           
           <div className="flex items-center gap-4">

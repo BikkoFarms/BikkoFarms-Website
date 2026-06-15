@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowRight, CheckCircle2, Clock } from 'lucide-react';
 import { Button } from '../ui/button';
 import { useAnalytics } from '../shared/Analytics';
 
@@ -31,22 +32,35 @@ export function CTASection() {
   };
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
+    <section id="contact" className="py-24 relative overflow-hidden bg-neutral-bg">
       {/* Background radial glow */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-brand-green-500/5 -z-10" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-brand-green-500/10 glow-blur -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] rounded-full bg-brand-green-500/5 glow-blur -z-10 animate-pulse" />
 
       <div className="max-w-4xl mx-auto px-6 text-center">
-        <div className="bg-neutral-card border border-neutral-border p-8 md:p-12 rounded-3xl shadow-xl space-y-8 relative">
-          
-          <div className="space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-brand-green-500 font-mono">GET STARTED</span>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-text-primary tracking-tight">
-              Empower Your Harvest Today
-            </h2>
-            <p className="text-text-secondary text-sm md:text-base max-w-xl mx-auto leading-relaxed">
-              Join the future of agricultural microfinance. Request a demo for your cooperative or partner with us as an impact investor.
-            </p>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="bg-neutral-card border border-neutral-border p-8 md:p-12 rounded-3xl shadow-xl space-y-8 relative overflow-hidden"
+        >
+          {/* Exclusivity cohort badge */}
+          <div className="flex flex-col items-center gap-3">
+            <div className="inline-flex items-center gap-2 border border-brand-amber-500/20 bg-brand-amber-500/5 px-4 py-1.5 rounded-full text-xs font-mono font-bold text-brand-amber-500">
+              <Clock className="w-3.5 h-3.5 animate-spin" style={{ animationDuration: '6s' }} />
+              <span>COHORT Q3 PILOTS: 84% RESERVED</span>
+            </div>
+            
+            <div className="space-y-3">
+              <span className="text-xs font-bold uppercase tracking-wider text-brand-green-500 font-mono">GET STARTED</span>
+              <h2 className="text-3xl md:text-5xl font-serif font-bold text-text-primary tracking-tight">
+                Empower Your Harvest Today
+              </h2>
+              <p className="text-text-secondary text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+                Join the future of agricultural microfinance. Request a demo for your cooperative or partner with us as an impact investor.
+              </p>
+            </div>
           </div>
 
           {submitted ? (
@@ -93,7 +107,7 @@ export function CTASection() {
 
               {/* Submit trigger */}
               <Button type="submit" className="w-full justify-center">
-                Submit Request
+                Request Pilot Demo
                 <ArrowRight className="w-4 h-4 ml-1.5" />
               </Button>
 
@@ -104,7 +118,7 @@ export function CTASection() {
             By submitting, you agree to our regional data protection regulations and privacy policies.
           </p>
 
-        </div>
+        </motion.div>
       </div>
     </section>
   );

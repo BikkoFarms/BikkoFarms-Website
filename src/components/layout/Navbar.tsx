@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowRight, Sprout } from 'lucide-react';
+import { Menu, X, ArrowRight, Sprout, Activity } from 'lucide-react';
 import { ThemeToggle } from '../ui/theme-toggle';
 import { Button } from '../ui/button';
 import { useAnalytics } from '../shared/Analytics';
@@ -21,7 +21,10 @@ export function Navbar() {
       }
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const navLinks = [
@@ -38,7 +41,6 @@ export function Navbar() {
       category: 'Conversions',
       label: 'Request Demo from Navbar Header',
     });
-    // Smooth scroll to final CTA section
     const el = document.getElementById('contact');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
@@ -56,6 +58,7 @@ export function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+          
           {/* Logo */}
           <a
             href="#"
