@@ -113,7 +113,7 @@ export function Hero() {
             className="grid grid-cols-3 gap-6 pt-6 border-t border-neutral-border/40 max-w-lg"
           >
             <div>
-              <p className="text-2xl font-serif font-bold text-brand-green-500">15% APY</p>
+              <p className="text-2xl font-serif font-bold text-brand-green-600 dark:text-brand-green-500">15% APY</p>
               <p className="text-[10px] text-text-secondary font-semibold uppercase mt-0.5 tracking-wider">Fixed Protocol Interest</p>
             </div>
             <div>
@@ -121,7 +121,7 @@ export function Hero() {
               <p className="text-[10px] text-text-secondary font-semibold uppercase mt-0.5 tracking-wider">Payout Delivery</p>
             </div>
             <div>
-              <p className="text-2xl font-serif font-bold text-brand-lisk">12.5k+</p>
+              <p className="text-2xl font-serif font-bold text-sky-600 dark:text-brand-lisk">12.5k+</p>
               <p className="text-[10px] text-text-secondary font-semibold uppercase mt-0.5 tracking-wider">Farmers Supported</p>
             </div>
           </motion.div>

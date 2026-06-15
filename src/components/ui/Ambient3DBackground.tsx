@@ -82,6 +82,12 @@ export function Ambient3DBackground() {
                 <stop offset="0%" stopColor="var(--3d-specular-white)" stopOpacity="0.8" />
                 <stop offset="100%" stopColor="var(--3d-specular-white)" stopOpacity="0" />
               </radialGradient>
+              <linearGradient id="glassReflection" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#ffffff" stopOpacity="0.45" />
+                <stop offset="35%" stopColor="#ffffff" stopOpacity="0.05" />
+                <stop offset="55%" stopColor="#ffffff" stopOpacity="0" />
+                <stop offset="100%" stopColor="#ffffff" stopOpacity="0.3" />
+              </linearGradient>
             </defs>
             {/* Primary Seed Shape */}
             <path
@@ -90,6 +96,12 @@ export function Ambient3DBackground() {
               stroke="var(--3d-seed-stroke)"
               strokeWidth="0.75"
               strokeDasharray="4,2"
+            />
+            {/* Glass Shimmer Overlay */}
+            <path
+              d="M50,15 C75,35 80,65 50,85 C20,65 25,35 50,15 Z"
+              fill="url(#glassReflection)"
+              style={{ mixBlendMode: 'overlay' }}
             />
             {/* 3D Wireframe Ribs for Depth */}
             <path d="M50,15 C58,35 60,65 50,85" stroke="var(--3d-rib-color)" strokeWidth="0.5" strokeOpacity="0.6" />
@@ -128,6 +140,12 @@ export function Ambient3DBackground() {
                 <stop offset="0%" stopColor="var(--3d-specular-white)" stopOpacity="0.7" />
                 <stop offset="100%" stopColor="var(--3d-specular-white)" stopOpacity="0" />
               </radialGradient>
+              <linearGradient id="glassReflectionPod" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#ffffff" stopOpacity="0.4" />
+                <stop offset="40%" stopColor="#ffffff" stopOpacity="0.05" />
+                <stop offset="60%" stopColor="#ffffff" stopOpacity="0" />
+                <stop offset="100%" stopColor="#ffffff" stopOpacity="0.25" />
+              </linearGradient>
             </defs>
             {/* Cocoa Pod Geometric Shape */}
             <path
@@ -135,6 +153,12 @@ export function Ambient3DBackground() {
               fill="url(#podGrad)"
               stroke="var(--3d-pod-stroke)"
               strokeWidth="0.75"
+            />
+            {/* Glass Shimmer Overlay */}
+            <path
+              d="M60,15 C85,35 95,65 80,95 C65,105 55,105 40,95 C25,65 35,35 60,15 Z"
+              fill="url(#glassReflectionPod)"
+              style={{ mixBlendMode: 'overlay' }}
             />
             {/* Pod Ribs */}
             <path d="M60,15 C68,40 78,70 65,98" stroke="var(--3d-rib-amber)" strokeWidth="0.5" strokeOpacity="0.7" />
@@ -169,11 +193,18 @@ export function Ambient3DBackground() {
                 <stop offset="0%" stopColor="var(--3d-lisk-mid)" stopOpacity="0.8" />
                 <stop offset="100%" stopColor="var(--3d-lisk-end)" stopOpacity="0.95" />
               </linearGradient>
+              <linearGradient id="glassReflectionLisk" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#ffffff" stopOpacity="0.45" />
+                <stop offset="50%" stopColor="#ffffff" stopOpacity="0" />
+                <stop offset="100%" stopColor="#ffffff" stopOpacity="0.2" />
+              </linearGradient>
             </defs>
             {/* Isometric Glass Octahedron Facets */}
             {/* Top Pyramid */}
             <path d="M50,15 L80,50 L50,55 Z" fill="url(#liskGradTop)" stroke="var(--3d-lisk-stroke)" strokeWidth="0.5" />
             <path d="M50,15 L20,50 L50,55 Z" fill="url(#liskGradTop)" fillOpacity="0.9" stroke="var(--3d-lisk-stroke)" strokeWidth="0.5" />
+            {/* Glass Face Overlay */}
+            <path d="M50,15 L80,50 L50,55 Z" fill="url(#glassReflectionLisk)" style={{ mixBlendMode: 'overlay' }} />
             <path d="M50,15 L80,50 L20,50 Z" fill="var(--3d-specular-white)" fillOpacity="0.05" />
             {/* Bottom Pyramid */}
             <path d="M50,85 L80,50 L50,55 Z" fill="url(#liskGradBottom)" stroke="var(--3d-lisk-stroke)" strokeWidth="0.5" />

@@ -17,7 +17,7 @@ export function TrustSignals() {
             </svg>
             <div className="flex flex-col">
               <span className="text-sm font-bold tracking-wider text-text-primary">LISK NETWORK</span>
-              <span className="text-[9px] text-brand-lisk font-semibold">EVM Layer-2</span>
+              <span className="text-[9px] text-sky-600 dark:text-brand-lisk font-semibold">EVM Layer-2</span>
             </div>
           </div>
 
@@ -30,7 +30,7 @@ export function TrustSignals() {
             </svg>
             <div className="flex flex-col">
               <span className="text-sm font-bold tracking-wider text-text-primary">KOTANI PAY</span>
-              <span className="text-[9px] text-brand-amber-500 font-semibold">Mobile Money Off-Ramp</span>
+              <span className="text-[9px] text-brand-amber-600 dark:text-brand-amber-500 font-semibold">Mobile Money Off-Ramp</span>
             </div>
           </div>
 
@@ -41,7 +41,7 @@ export function TrustSignals() {
             </svg>
             <div className="flex flex-col">
               <span className="text-sm font-bold tracking-wider text-text-primary">CHAINLINK</span>
-              <span className="text-[9px] text-brand-lisk font-semibold">Price & Weather Oracles</span>
+              <span className="text-[9px] text-sky-600 dark:text-brand-lisk font-semibold">Price & Weather Oracles</span>
             </div>
           </div>
 
@@ -54,7 +54,7 @@ export function TrustSignals() {
             </div>
             <div className="flex flex-col">
               <span className="text-sm font-bold tracking-wider text-text-primary">MOBILE MONEY</span>
-              <span className="text-[9px] text-brand-green-500 font-semibold">MTN, Telecel & AT Cash</span>
+              <span className="text-[9px] text-brand-green-600 dark:text-brand-green-500 font-semibold">MTN, Telecel & AT Cash</span>
             </div>
           </div>
 

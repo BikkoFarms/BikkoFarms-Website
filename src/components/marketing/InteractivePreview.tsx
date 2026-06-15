@@ -16,25 +16,25 @@ export function InteractivePreview() {
       title: 'Farmer Profile',
       icon: User,
       desc: 'Verify registry details on-chain',
-      color: 'text-brand-green-500 bg-brand-green-500/10 border-brand-green-500/30',
+      color: 'text-brand-green-600 dark:text-brand-green-500 bg-brand-green-500/10 border-brand-green-500/30',
     },
     {
       title: 'Tokenize Harvest',
       icon: Sprout,
       desc: 'Co-op verifies yield & mints NFT',
-      color: 'text-brand-amber-500 bg-brand-amber-500/10 border-brand-amber-500/30',
+      color: 'text-brand-amber-600 dark:text-brand-amber-500 bg-brand-amber-500/10 border-brand-amber-500/30',
     },
     {
       title: 'Lock Collateral',
       icon: Lock,
       desc: 'Smart contract secures the yield',
-      color: 'text-brand-lisk bg-brand-lisk/10 border-brand-lisk/30',
+      color: 'text-sky-600 dark:text-brand-lisk bg-brand-lisk/10 border-brand-lisk/30',
     },
     {
       title: 'Instant Cash-out',
       icon: Wallet,
       desc: 'Stablecoins converted to Mobile Money',
-      color: 'text-brand-cyan bg-brand-cyan/10 border-brand-cyan/30',
+      color: 'text-cyan-700 dark:text-brand-cyan bg-brand-cyan/10 border-brand-cyan/30',
     },
   ];
 
@@ -135,7 +135,7 @@ export function InteractivePreview() {
                     <div className="w-3 h-3 rounded-full bg-brand-green-500" />
                     <span className="text-xs font-mono font-semibold text-text-secondary">FARMER REGISTRY</span>
                   </div>
-                  <span className="text-xs font-semibold text-brand-green-500 bg-brand-green-500/10 px-2 py-0.5 rounded-md">MTN VERIFIED</span>
+                  <span className="text-xs font-semibold text-brand-green-600 dark:text-brand-green-500 bg-brand-green-500/10 px-2 py-0.5 rounded-md">MTN VERIFIED</span>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
@@ -158,7 +158,7 @@ export function InteractivePreview() {
                 </div>
 
                 <div className="bg-neutral-card/60 border border-neutral-border/40 p-3 rounded-lg flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-brand-green-500/10 flex items-center justify-center text-brand-green-500">
+                  <div className="w-8 h-8 rounded-full bg-brand-green-500/10 flex items-center justify-center text-brand-green-600 dark:text-brand-green-500">
                     <CheckCircle2 className="w-4 h-4" />
                   </div>
                   <div className="text-xs">
@@ -189,7 +189,7 @@ export function InteractivePreview() {
                       <span className="text-[10px] font-bold text-text-muted">MINT STATUS</span>
                       <span className="text-xs font-semibold text-text-primary">Contract Mint Success</span>
                     </div>
-                    <span className="text-[11px] font-mono bg-neutral-border/30 px-2 py-0.5 rounded text-brand-amber-500">#BK-CC-109</span>
+                    <span className="text-[11px] font-mono bg-neutral-border/30 px-2 py-0.5 rounded text-brand-amber-600 dark:text-brand-amber-500">#BK-CC-109</span>
                   </div>
 
                   <div className="grid grid-cols-2 gap-3 text-xs bg-neutral-card/40 p-3 rounded-lg">
@@ -203,11 +203,11 @@ export function InteractivePreview() {
                     </div>
                     <div>
                       <span className="text-text-secondary">Moisture Index:</span>
-                      <span className="font-semibold text-brand-green-500 ml-1.5">6.8% (Optimal)</span>
+                      <span className="font-semibold text-brand-green-600 dark:text-brand-green-500 ml-1.5">6.8% (Optimal)</span>
                     </div>
                     <div>
                       <span className="text-text-secondary">Traceability ID:</span>
-                      <span className="font-semibold text-brand-lisk ml-1.5 font-mono">EUDR-09x4a</span>
+                      <span className="font-semibold text-sky-600 dark:text-brand-lisk ml-1.5 font-mono">EUDR-09x4a</span>
                     </div>
                   </div>
                 </div>
@@ -225,7 +225,7 @@ export function InteractivePreview() {
                     <div className="w-3 h-3 rounded-full bg-brand-lisk" />
                     <span className="text-xs font-mono font-semibold text-text-secondary">EVM ESCROW SECURED</span>
                   </div>
-                  <span className="text-xs font-semibold text-brand-lisk bg-brand-lisk/10 px-2 py-0.5 rounded-md">LOCKED</span>
+                  <span className="text-xs font-semibold text-sky-600 dark:text-brand-lisk bg-brand-lisk/10 px-2 py-0.5 rounded-md">LOCKED</span>
                 </div>
 
                 <div className="space-y-2">
@@ -237,15 +237,15 @@ export function InteractivePreview() {
                   <div className="grid grid-cols-3 gap-2 text-center text-xs">
                     <div className="bg-neutral-card/40 p-2.5 rounded-lg border border-neutral-border/30">
                       <p className="text-[10px] text-text-secondary font-semibold">Max Loan Value</p>
-                      <p className="text-sm font-bold text-brand-green-500 mt-1">16,200 GHS</p>
+                      <p className="text-sm font-bold text-brand-green-600 dark:text-brand-green-500 mt-1">16,200 GHS</p>
                     </div>
                     <div className="bg-neutral-card/40 p-2.5 rounded-lg border border-neutral-border/30">
                       <p className="text-[10px] text-text-secondary font-semibold">Interest Rate</p>
-                      <p className="text-sm font-bold text-brand-amber-500 mt-1">15% APY</p>
+                      <p className="text-sm font-bold text-brand-amber-600 dark:text-brand-amber-500 mt-1">15% APY</p>
                     </div>
                     <div className="bg-neutral-card/40 p-2.5 rounded-lg border border-neutral-border/30">
                       <p className="text-[10px] text-text-secondary font-semibold">Duration</p>
-                      <p className="text-sm font-bold text-brand-lisk mt-1">6 Months</p>
+                      <p className="text-sm font-bold text-sky-600 dark:text-brand-lisk mt-1">6 Months</p>
                     </div>
                   </div>
                 </div>
@@ -263,12 +263,12 @@ export function InteractivePreview() {
                     <div className="w-3 h-3 rounded-full bg-brand-cyan" />
                     <span className="text-xs font-mono font-semibold text-text-secondary">STABLECOIN BRIDGE DISBURSE</span>
                   </div>
-                  <span className="text-xs font-semibold text-brand-cyan bg-brand-cyan/10 px-2 py-0.5 rounded-md">COMPLETED</span>
+                  <span className="text-xs font-semibold text-cyan-700 dark:text-brand-cyan bg-brand-cyan/10 px-2 py-0.5 rounded-md">COMPLETED</span>
                 </div>
 
                 <div className="space-y-3">
                   <div className="border border-brand-green-500/20 bg-brand-green-500/5 p-4 rounded-xl text-center space-y-2">
-                    <CheckCircle2 className="w-8 h-8 text-brand-green-500 mx-auto" />
+                    <CheckCircle2 className="w-8 h-8 text-brand-green-600 dark:text-brand-green-500 mx-auto" />
                     <div>
                       <p className="text-xs font-semibold text-text-secondary">Mobile money alert</p>
                       <h4 className="text-lg font-bold text-text-primary mt-0.5">+10,000.00 GHS</h4>

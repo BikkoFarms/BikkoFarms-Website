@@ -38,7 +38,7 @@ export function Problem() {
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-6 space-y-6"
           >
-            <div className="inline-flex items-center gap-2 text-xs font-bold font-mono text-brand-amber-500 bg-brand-amber-500/10 border border-brand-amber-500/20 px-3 py-1 rounded-full">
+            <div className="inline-flex items-center gap-2 text-xs font-bold font-mono text-brand-amber-600 dark:text-brand-amber-500 bg-brand-amber-500/10 border border-brand-amber-500/20 px-3 py-1 rounded-full">
               <ShieldAlert className="w-3.5 h-3.5 animate-pulse" />
               THE REALITY FOR 500M SMALLHOLDERS
             </div>
@@ -131,7 +131,7 @@ export function Problem() {
 
                   {/* BikkoChain rates bar */}
                   <div className="space-y-1.5">
-                    <div className="flex justify-between text-xs font-bold text-brand-green-500">
+                    <div className="flex justify-between text-xs font-bold text-brand-green-600 dark:text-brand-green-500">
                       <span>BikkoChain Protocol APY (Yield Collateralized)</span>
                       <span>15% APY</span>
                     </div>

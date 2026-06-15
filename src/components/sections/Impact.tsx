@@ -77,7 +77,7 @@ export function Impact() {
               <div className="grid grid-cols-2 gap-4 pt-2">
                 <div className="space-y-1">
                   <div className="flex items-center gap-1.5 text-text-secondary">
-                    <Users className="w-3.5 h-3.5 text-brand-green-500" />
+                    <Users className="w-3.5 h-3.5 text-brand-green-600 dark:text-brand-green-500" />
                     <span className="text-[10px] font-bold uppercase tracking-wider font-mono">Farmers</span>
                   </div>
                   <p className="text-base font-bold text-text-primary">{regions[selectedRegion].stats.farmers}</p>
@@ -85,7 +85,7 @@ export function Impact() {
 
                 <div className="space-y-1">
                   <div className="flex items-center gap-1.5 text-text-secondary">
-                    <Leaf className="w-3.5 h-3.5 text-brand-amber-500" />
+                    <Leaf className="w-3.5 h-3.5 text-brand-amber-600 dark:text-brand-amber-500" />
                     <span className="text-[10px] font-bold uppercase tracking-wider font-mono">Tonnage</span>
                   </div>
                   <p className="text-base font-bold text-text-primary">{regions[selectedRegion].stats.volume}</p>
@@ -93,7 +93,7 @@ export function Impact() {
 
                 <div className="space-y-1">
                   <div className="flex items-center gap-1.5 text-text-secondary">
-                    <Coins className="w-3.5 h-3.5 text-brand-lisk" />
+                    <Coins className="w-3.5 h-3.5 text-sky-600 dark:text-brand-lisk" />
                     <span className="text-[10px] font-bold uppercase tracking-wider font-mono">Disbursed</span>
                   </div>
                   <p className="text-base font-bold text-text-primary">{regions[selectedRegion].stats.disbursed}</p>
@@ -101,10 +101,10 @@ export function Impact() {
 
                 <div className="space-y-1">
                   <div className="flex items-center gap-1.5 text-text-secondary">
-                    <CheckCircle className="w-3.5 h-3.5 text-brand-cyan" />
+                    <CheckCircle className="w-3.5 h-3.5 text-cyan-700 dark:text-brand-cyan" />
                     <span className="text-[10px] font-bold uppercase tracking-wider font-mono">Defaults</span>
                   </div>
-                  <p className="text-base font-bold text-brand-green-500">{regions[selectedRegion].stats.defaults}</p>
+                  <p className="text-base font-bold text-brand-green-600 dark:text-brand-green-500">{regions[selectedRegion].stats.defaults}</p>
                 </div>
               </div>
             </div>
@@ -159,7 +159,7 @@ export function Impact() {
                     {/* Floating text badge */}
                     <span className={`absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2 py-0.5 rounded bg-neutral-bg border text-[9px] font-mono font-bold transition-all whitespace-nowrap ${
                       isSelected
-                        ? 'border-brand-green-500 text-brand-green-500'
+                        ? 'border-brand-green-600 dark:border-brand-green-500 text-brand-green-600 dark:text-brand-green-500 shadow-sm'
                         : 'border-neutral-border text-text-secondary group-hover:text-text-primary'
                     }`}>
                       {reg.name}

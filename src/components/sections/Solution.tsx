@@ -10,31 +10,31 @@ export function Solution() {
       title: 'Harvest Yield',
       desc: 'Farmer contracts crop quantities with certified local cooperatives.',
       icon: Sprout,
-      color: 'border-brand-green-500/30 text-brand-green-500 bg-brand-green-500/5',
+      color: 'border-brand-green-500/30 text-brand-green-600 dark:text-brand-green-500 bg-brand-green-500/5',
     },
     {
       title: 'Mint NFT Collateral',
       desc: 'Co-op supervisor verifies yield quality and mints crop metadata as an ERC-721 token.',
       icon: ShieldCheck,
-      color: 'border-brand-amber-500/30 text-brand-amber-500 bg-brand-amber-500/5',
+      color: 'border-brand-amber-500/30 text-brand-amber-600 dark:text-brand-amber-500 bg-brand-amber-500/5',
     },
     {
       title: 'Smart Contract Lock',
       desc: 'The NFT collateral is locked securely in BikkoChain lending escrows.',
       icon: Cpu,
-      color: 'border-brand-lisk/30 text-brand-lisk bg-brand-lisk/5',
+      color: 'border-brand-lisk/30 text-sky-600 dark:text-brand-lisk bg-brand-lisk/5',
     },
     {
       title: 'Mobile Payout',
       desc: 'Stablecoins are bridged and disburse local Cedis to MTN/Telecel wallets.',
       icon: Wallet,
-      color: 'border-brand-cyan/30 text-brand-cyan bg-brand-cyan/5',
+      color: 'border-brand-cyan/30 text-cyan-700 dark:text-brand-cyan bg-brand-cyan/5',
     },
     {
       title: 'Repayment & Burn',
       desc: 'Co-op sells harvest to buyers; loan settles, and collateral token is released.',
       icon: RefreshCw,
-      color: 'border-brand-green-500/30 text-brand-green-500 bg-brand-green-500/5',
+      color: 'border-brand-green-500/30 text-brand-green-600 dark:text-brand-green-500 bg-brand-green-500/5',
     },
   ];
 
