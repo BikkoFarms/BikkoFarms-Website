@@ -2,37 +2,37 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sprout, ShieldCheck, Cpu, Wallet, RefreshCw } from 'lucide-react';
+import { ArrowRight, Sprout, BadgeCheck, Wallet, RefreshCw, Users } from 'lucide-react';
 
 export function Solution() {
   const steps = [
     {
-      title: 'Harvest Yield',
-      desc: 'Farmer contracts crop quantities with certified local cooperatives.',
-      icon: Sprout,
+      title: 'Register with Your Co-op',
+      desc: 'Join through your local farming cooperative. No bank account or smartphone required.',
+      icon: Users,
       color: 'border-brand-green-500/30 text-brand-green-600 dark:text-brand-green-500 bg-brand-green-500/5',
     },
     {
-      title: 'Mint NFT Collateral',
-      desc: 'Co-op supervisor verifies yield quality and mints crop metadata as an ERC-721 token.',
-      icon: ShieldCheck,
+      title: 'Harvest Gets Certified',
+      desc: 'A co-op inspector visits your farm, weighs your crop, and confirms everything is in order.',
+      icon: BadgeCheck,
       color: 'border-brand-amber-500/30 text-brand-amber-600 dark:text-brand-amber-500 bg-brand-amber-500/5',
     },
     {
-      title: 'Smart Contract Lock',
-      desc: 'The NFT collateral is locked securely in BikkoChain lending escrows.',
-      icon: Cpu,
+      title: 'Loan is Approved',
+      desc: 'Your certified harvest acts as your guarantee. No land deed or salary slip needed.',
+      icon: Sprout,
       color: 'border-brand-lisk/30 text-sky-600 dark:text-brand-lisk bg-brand-lisk/5',
     },
     {
-      title: 'Mobile Payout',
-      desc: 'Stablecoins are bridged and disburse local Cedis to MTN/Telecel wallets.',
+      title: 'Cash to Your Phone',
+      desc: 'Money arrives in your Mobile Money wallet in minutes — MTN, Telecel, or AT Money.',
       icon: Wallet,
       color: 'border-brand-cyan/30 text-cyan-700 dark:text-brand-cyan bg-brand-cyan/5',
     },
     {
-      title: 'Repayment & Burn',
-      desc: 'Co-op sells harvest to buyers; loan settles, and collateral token is released.',
+      title: 'Harvest Sold, Loan Settled',
+      desc: 'At harvest time, the co-op sells your crop. The loan is settled automatically — any surplus goes directly to you.',
       icon: RefreshCw,
       color: 'border-brand-green-500/30 text-brand-green-600 dark:text-brand-green-500 bg-brand-green-500/5',
     },
@@ -50,12 +50,12 @@ export function Solution() {
           transition={{ duration: 0.45 }}
           className="max-w-3xl mx-auto text-center space-y-4 mb-16"
         >
-          <span className="text-xs font-bold uppercase tracking-wider text-brand-green-500">THE PROTOCOL LAYER</span>
+          <span className="text-xs font-bold uppercase tracking-wider text-brand-green-500">HOW IT WORKS</span>
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-text-primary tracking-tight">
-            How BikkoChain Bridges the Gap
+            Your Harvest, Your Loan — In 5 Simple Steps
           </h2>
           <p className="text-text-secondary text-sm md:text-base leading-relaxed">
-            By turning future physical harvests into digital collateral assets, we connect smallholder coffee and cocoa farmers directly to global liquidity protocols in a five-step secure pipeline.
+            From crop to cash in your pocket — here's the journey, start to finish. No paperwork, no bank queues.
           </p>
         </motion.div>
 

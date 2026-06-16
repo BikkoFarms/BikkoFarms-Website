@@ -5,7 +5,7 @@ export function TrustSignals() {
     <section className="border-y border-neutral-border/40 bg-neutral-card/30 py-12 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <p className="text-center text-xs font-semibold uppercase tracking-widest text-text-secondary mb-8">
-          Securing Trust with Industry-Leading Infrastructure
+          Trusted by leading organisations across Ghana and beyond
         </p>
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 items-center justify-items-center opacity-85 hover:opacity-100 transition-opacity duration-300">
@@ -17,7 +17,7 @@ export function TrustSignals() {
             </svg>
             <div className="flex flex-col">
               <span className="text-sm font-bold tracking-wider text-text-primary">LISK NETWORK</span>
-              <span className="text-[9px] text-sky-600 dark:text-brand-lisk font-semibold">EVM Layer-2</span>
+              <span className="text-[9px] text-sky-600 dark:text-brand-lisk font-semibold">Secure &amp; Affordable Transfers</span>
             </div>
           </div>
 
@@ -41,7 +41,7 @@ export function TrustSignals() {
             </svg>
             <div className="flex flex-col">
               <span className="text-sm font-bold tracking-wider text-text-primary">CHAINLINK</span>
-              <span className="text-[9px] text-sky-600 dark:text-brand-lisk font-semibold">Price & Weather Oracles</span>
+              <span className="text-[9px] text-sky-600 dark:text-brand-lisk font-semibold">Certified Data Feeds</span>
             </div>
           </div>
 

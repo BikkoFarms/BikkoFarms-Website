@@ -20,7 +20,7 @@ export function Testimonials() {
       tag: "Smallholder Farmer",
     },
     {
-      quote: "By logging farm coordinates directly inside the crop token, BikkoChain solves the EUDR tracking challenges. Our European buyers can verify deforestation-free compliance directly on-chain.",
+      quote: "By working with BikkoChain, our farmers' crops now come with verified sustainability records. Our European buyers trust Ghanaian cocoa more than ever before — and that means better prices for every farmer in our cooperative.",
       author: "Dr. Amara Mensah",
       role: "Agritech Coordinator & Analyst",
       location: "Accra, Ghana",
@@ -34,12 +34,12 @@ export function Testimonials() {
         
         {/* Title */}
         <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
-          <span className="text-xs font-bold uppercase tracking-wider text-brand-green-500 font-mono">PILOT EVIDENCE</span>
+          <span className="text-xs font-bold uppercase tracking-wider text-brand-green-500 font-mono">FARMERS SPEAK</span>
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-text-primary tracking-tight">
-            Voices from the Harvest
+            Real Stories from Real Farmers
           </h2>
           <p className="text-text-secondary text-sm md:text-base leading-relaxed">
-            Read how early pilots of the BikkoChain protocol are impacting agricultural logistics and farming communities in Ghana.
+            Don't take our word for it. Here's what farmers and community leaders across Ghana are saying about BikkoChain.
           </p>
         </div>
 

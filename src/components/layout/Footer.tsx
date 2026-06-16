@@ -10,10 +10,10 @@ export function Footer() {
 
   const links = {
     product: [
-      { name: 'Onboarding', href: '#' },
-      { name: 'Harvest Tokenization', href: '#' },
-      { name: 'Lending Escrow', href: '#' },
-      { name: 'USSD Directory', href: '#' },
+      { name: 'How to Apply', href: '#' },
+      { name: 'Find Your Co-op', href: '#' },
+      { name: 'Loan via WhatsApp', href: '#' },
+      { name: 'Get Help', href: '#' },
     ],
     company: [
       { name: 'About Us', href: '#' },
@@ -56,7 +56,7 @@ export function Footer() {
             </div>
             
             <p className="text-sm text-text-secondary max-w-sm leading-relaxed">
-              Enabling smallholder cocoa and coffee farmers in Ghana to secure instant agricultural micro-loans using tokenized future harvests as collateral.
+              Helping cocoa and coffee farmers in Ghana get fast, fair loans — sent straight to their mobile phone.
             </p>
             
             {/* Lisk Badge */}
@@ -129,17 +129,15 @@ export function Footer() {
         <div className="border-t border-neutral-border/60 pt-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2 max-w-2xl">
             <p className="text-xs text-text-secondary leading-relaxed">
-              <strong className="font-semibold text-text-primary">Lending Disclosure:</strong> Loans issued through the BikkoChain protocol are collateralized by certified crop agreements verified by cooperative inspectors. Interest rates are determined dynamically on-chain and disburse in Cedis through licensed local mobile money operators.
+              <strong className="font-semibold text-text-primary">Lending Disclosure:</strong> Loans issued through BikkoChain are secured by certified crop agreements verified by cooperative inspectors. Funds are disbursed in Ghanaian Cedis through licensed mobile money operators. Interest rates are fixed and communicated clearly before any loan is accepted.
             </p>
             <p className="text-[10px] text-text-muted">
-              © {currentYear} BikkoChain Organization. All rights reserved. Registered agritech microfinance provider under GHS Ministry of Food and Agriculture (MoFA) pilot registries.
+              &copy; {currentYear} BikkoChain Organization. All rights reserved. Licensed agritech microfinance provider under Ghana Ministry of Food and Agriculture (MoFA) pilot programme.
             </p>
             <div className="flex flex-wrap gap-4 text-[9px] text-text-muted font-semibold tracking-wider uppercase font-mono pt-1">
               <span>Licensed Pilot Operator (MoFA GH)</span>
-              <span>•</span>
-              <span>EUDR Forest Canopy Traceable</span>
-              <span>•</span>
-              <span>SEC RWA sandboxes compliant</span>
+              <span>&bull;</span>
+              <span>Eco-Friendly Farming Partner</span>
             </div>
           </div>
           

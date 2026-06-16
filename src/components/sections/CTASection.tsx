@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2, Clock } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Button } from '../ui/button';
 import { useAnalytics } from '../shared/Analytics';
 
@@ -45,20 +45,19 @@ export function CTASection() {
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="bg-neutral-card border border-neutral-border p-8 md:p-12 rounded-3xl shadow-xl space-y-8 relative overflow-hidden"
         >
-          {/* Exclusivity cohort badge */}
+          {/* Invite badge */}
           <div className="flex flex-col items-center gap-3">
-            <div className="inline-flex items-center gap-2 border border-brand-amber-500/20 bg-brand-amber-500/5 px-4 py-1.5 rounded-full text-xs font-mono font-bold text-brand-amber-500">
-              <Clock className="w-3.5 h-3.5 animate-spin" style={{ animationDuration: '6s' }} />
-              <span>COHORT Q3 PILOTS: 84% RESERVED</span>
+            <div className="inline-flex items-center gap-2 border border-brand-green-500/20 bg-brand-green-500/5 px-4 py-1.5 rounded-full text-xs font-mono font-bold text-brand-green-600 dark:text-brand-green-400">
+              <span>🌾 Now supporting farmers across 3 regions of Ghana</span>
             </div>
             
             <div className="space-y-3">
               <span className="text-xs font-bold uppercase tracking-wider text-brand-green-500 font-mono">GET STARTED</span>
               <h2 className="text-3xl md:text-5xl font-serif font-bold text-text-primary tracking-tight">
-                Empower Your Harvest Today
+                Ready to Get Your First Loan?
               </h2>
               <p className="text-text-secondary text-sm md:text-base max-w-xl mx-auto leading-relaxed">
-                Join the future of agricultural microfinance. Request a demo for your cooperative or partner with us as an impact investor.
+                Whether you're a farmer, a cooperative leader, or someone who wants to help — we'd love to hear from you. Let's grow together.
               </p>
             </div>
           </div>
@@ -94,9 +93,9 @@ export function CTASection() {
                   aria-label="Your Role"
                 >
                   <option value="Cooperative">Co-op Leader</option>
-                  <option value="Investor">Impact Investor</option>
-                  <option value="Farmer">Farming Member</option>
-                  <option value="Developer">Developer / Judge</option>
+                  <option value="Farmer">Farmer</option>
+                  <option value="Partner">Partner / Supporter</option>
+                  <option value="Other">Other</option>
                 </select>
 
               </div>
@@ -107,7 +106,7 @@ export function CTASection() {
 
               {/* Submit trigger */}
               <Button type="submit" className="w-full justify-center">
-                Request Pilot Demo
+                Get in Touch
                 <ArrowRight className="w-4 h-4 ml-1.5" />
               </Button>
 

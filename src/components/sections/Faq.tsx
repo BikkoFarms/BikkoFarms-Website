@@ -7,15 +7,15 @@ import { useAnalytics } from '../shared/Analytics';
 
 export function Faq() {
   const { trackEvent } = useAnalytics();
-  const [activeTab, setActiveTab] = React.useState<'farmers' | 'coops' | 'investors'>('farmers');
+  const [activeTab, setActiveTab] = React.useState<'farmers' | 'coops' | 'partners'>('farmers');
 
   const tabs = [
     { id: 'farmers', name: 'For Farmers' },
     { id: 'coops', name: 'For Cooperatives' },
-    { id: 'investors', name: 'For Investors' },
+    { id: 'partners', name: 'For Partners' },
   ] as const;
 
-  const handleTabChange = (tabId: 'farmers' | 'coops' | 'investors') => {
+  const handleTabChange = (tabId: 'farmers' | 'coops' | 'partners') => {
     trackEvent({
       action: `toggle_faq_tab_${tabId}`,
       category: 'Interaction',
@@ -30,59 +30,83 @@ export function Faq() {
         title: 'Do I need a smartphone to borrow?',
         content: (
           <p>
-            No. We designed BikkoChain for maximum access. Farmers can check loan terms, apply, and verify repayments using a basic feature phone dialing our shortcode <strong>*384*22#</strong>. For entry-level smartphone users, we also offer an interactive WhatsApp chatbot that works on low-bandwidth connections.
+            No — BikkoChain is designed for everyone. You can apply, check your loan, and confirm repayments using any basic phone by dialling <strong>*384*22#</strong>. If you have a smartphone, you can also use our WhatsApp chatbot, which works even on slow internet connections.
           </p>
         ),
       },
       {
-        title: 'Which mobile money providers are supported in Ghana?',
+        title: 'Which mobile money wallets are supported?',
         content: (
           <p>
-            Our gateway integration with Kotani Pay supports all major mobile money carriers in Ghana. You can receive Cedi payouts directly to your <strong>MTN Mobile Money</strong>, <strong>Telecel (Vodafone) Cash</strong>, or <strong>AT Money</strong> wallet.
+            We support all the major mobile money services in Ghana. You can receive your loan directly into your <strong>MTN Mobile Money</strong>, <strong>Telecel Cash</strong>, or <strong>AT Money</strong> wallet — whichever you already use.
           </p>
         ),
       },
       {
-        title: 'How quickly are loans disbursed?',
+        title: 'How quickly do I receive my money?',
         content: (
           <p>
-            Once your cooperative inspector approves your crop certificate and submits it to the ledger, the loan approval triggers instantly. Cedar payouts are deposited to your mobile wallet in under 2 minutes.
+            Once your cooperative confirms your crop, your loan is approved automatically. The money arrives in your mobile wallet in <strong>under 2 minutes</strong>. No waiting days or weeks — it's that fast.
+          </p>
+        ),
+      },
+      {
+        title: 'Do I need land documents or a bank account?',
+        content: (
+          <p>
+            No. Your certified harvest is your only requirement. We don't need land deeds, salary slips, or a bank account. If your co-op can confirm your crop, you can qualify for a loan.
           </p>
         ),
       },
     ],
     coops: [
       {
-        title: 'How does harvest collateral work?',
+        title: 'How does using the harvest as security work?',
         content: (
           <p>
-            Instead of physical assets or deeds, BikkoChain uses crop yields as collateral. The cooperative certifies crop quantities (e.g. 18 bags of cocoa), which is minted as a digital token (NFT) on the Lisk L2 network. This token is locked in a secure lending escrow smart contract as collateral.
+            Instead of requiring physical assets, BikkoChain uses the value of your members' crops as security for their loans. Your cooperative certifies each farmer's crop quantity and quality. That certification is all that's needed to approve a loan — our system handles the rest automatically.
           </p>
         ),
       },
       {
-        title: 'What are the responsibilities of a Cooperative Supervisor?',
+        title: 'What does a Cooperative Supervisor need to do?',
         content: (
           <p>
-            Supervisors run biometric registrations for member farmers, verify harvest weights and moisture levels, and initiate the on-chain minting transactions. Repayments occur automatically when the co-op aggregates and sells the harvest to commodity buyers.
+            Supervisors register member farmers, verify harvest weights during inspection, and confirm crop quality through the BikkoChain app or WhatsApp. When the co-op sells the harvest to buyers, loan repayments are settled automatically — no manual collection needed.
+          </p>
+        ),
+      },
+      {
+        title: "Is it safe for our members' data?",
+        content: (
+          <p>
+            Yes. All farmer records are handled securely and in line with Ghana's data protection regulations. Only your cooperative and BikkoChain can access member-level information. We never sell or share data with third parties.
           </p>
         ),
       },
     ],
-    investors: [
+    partners: [
       {
-        title: 'Is the Lisk Layer-2 network secure?',
+        title: 'Is BikkoChain a regulated service?',
         content: (
           <p>
-            Yes. BikkoChain is deployed on Lisk, an EVM-compatible Layer-2 ecosystem anchored to Ethereum. This guarantees cryptographically secure escrow smart contracts, full state audit transparency, and gas fees under $0.01 per validation.
+            Yes. BikkoChain operates as a licensed pilot microfinance service under the Ghana Ministry of Food and Agriculture (MoFA). All lending activities follow regulated frameworks designed to protect farmers and cooperative partners.
           </p>
         ),
       },
       {
-        title: 'How is default risk managed?',
+        title: 'How is loan risk managed?',
         content: (
           <p>
-            We manage risks through two key layers: cooperative verification filters and Chainlink weather oracles. Crop yield predictions are physically validated before tokenization, and oracle triggers automatically pause repayment metrics during certified regional droughts or harvest failures.
+            Risk is managed through two layers: cooperative-level verification before any loan is issued, and automatic repayment collection when the harvest is sold. In the rare event of a poor harvest season, our team works directly with affected cooperatives to find fair solutions.
+          </p>
+        ),
+      },
+      {
+        title: 'How can my organisation get involved?',
+        content: (
+          <p>
+            We welcome cooperative unions, NGOs, financial institutions, and sustainability-focused organisations. Use the contact form below to get in touch and our team will reach out within 24 hours to discuss how we can work together.
           </p>
         ),
       },
@@ -100,12 +124,12 @@ export function Faq() {
           viewport={{ once: true }}
           className="text-center space-y-4 mb-12"
         >
-          <span className="text-xs font-bold uppercase tracking-wider text-brand-green-500 font-mono">SUPPORT CORE</span>
+          <span className="text-xs font-bold uppercase tracking-wider text-brand-green-500 font-mono">GOT QUESTIONS?</span>
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-text-primary tracking-tight">
-            Common Inquiries
+            Everything You Need to Know
           </h2>
           <p className="text-text-secondary text-sm md:text-base leading-relaxed">
-            Select a category below to review questions regarding mobile cashouts, cooperative structures, and blockchain security.
+            Quick answers to the questions we hear most from farmers, cooperative leaders, and partners.
           </p>
         </motion.div>
 

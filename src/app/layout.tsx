@@ -20,23 +20,23 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: 'BikkoChain | Instant Crop Collateralized Loans for Smallholder Farmers',
-  description: 'Enable smallholder cocoa and coffee farmers in Ghana to secure near-instant agricultural micro-loans using tokenized future harvests as collateral. Powered by the Lisk blockchain and Kotani Pay mobile money off-ramps.',
+  title: 'BikkoChain | Farm Loans in Minutes, Not Months',
+  description: 'BikkoChain helps cocoa and coffee farmers in Ghana get fast, affordable loans using their harvest as security — no bank visits, no land deeds, just Mobile Money.',
   keywords: [
     'BikkoChain',
-    'agritech loans Ghana',
-    'crop tokenization Lisk',
-    'decentralized microfinance Africa',
-    'Mobile Money lending',
-    'cocoa harvest collateral RWA',
-    'EVM lending escrow',
-    'EUDR crop traceability blockchain'
+    'farm loans Ghana',
+    'mobile money farming loan',
+    'cocoa farmer credit Ghana',
+    'agricultural microfinance Africa',
+    'smallholder farmer loans',
+    'farming cooperative finance',
+    'instant farm loan Mobile Money'
   ],
   authors: [{ name: 'BikkoChain Team' }],
   metadataBase: new URL('https://bikkochain.org'),
   openGraph: {
-    title: 'BikkoChain | Instant Crop Collateralized Loans for Smallholder Farmers',
-    description: 'Empower farmers to secure instant micro-loans directly to their mobile money wallets using future crop harvests as collateral. Built on Lisk Network.',
+    title: 'BikkoChain | Farm Loans in Minutes, Not Months',
+    description: 'BikkoChain helps cocoa and coffee farmers in Ghana get fast, affordable loans using their harvest as security — sent straight to their Mobile Money wallet.',
     url: 'https://bikkochain.org',
     siteName: 'BikkoChain',
     locale: 'en_GH',
@@ -44,8 +44,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'BikkoChain | Instant Crop Collateralized Loans',
-    description: 'Empower farmers to secure instant micro-loans directly to their mobile money wallets using future crop harvests as collateral. Built on Lisk Network.',
+    title: 'BikkoChain | Farm Loans in Minutes, Not Months',
+    description: 'BikkoChain helps cocoa and coffee farmers in Ghana get fast, affordable loans using their harvest as security — sent straight to their Mobile Money wallet.',
   },
 };
 
@@ -59,7 +59,7 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'FinancialService',
     'name': 'BikkoChain',
-    'description': 'Decentralized agricultural microfinance platform tokenizing future harvests as collateral on the Lisk blockchain.',
+    'description': 'Agricultural microfinance service helping cocoa and coffee farmers in Ghana access fast, affordable loans using their harvest as security.',
     'url': 'https://bikkochain.org',
     'address': {
       '@type': 'PostalAddress',
@@ -68,7 +68,7 @@ export default function RootLayout({
       'addressCountry': 'GH'
     },
     'areaServed': 'Ghana',
-    'feesAndCommissionsSpecification': 'Competitive 15% APY crop collateralized micro-loans'
+    'feesAndCommissionsSpecification': 'Fair 15% interest rate on harvest-secured farm loans'
   };
 
   return (

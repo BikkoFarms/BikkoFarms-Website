@@ -7,18 +7,18 @@ import { ShieldAlert, AlertTriangle, Coins, Ban } from 'lucide-react';
 export function Problem() {
   const painPoints = [
     {
-      title: 'Exorbitant Interest Rates',
-      desc: 'Local microfinance and loan sharks charge interest rates exceeding 45–60% APY, trapping smallholder families in permanent debt.',
+      title: 'Loan sharks charge crippling rates',
+      desc: "Local moneylenders charge over 55% in interest — meaning more than half of a farmer's harvest earnings go straight back in repayments.",
       icon: Coins,
     },
     {
-      title: 'No Traditional Collateral',
-      desc: 'Commercial banks demand property deeds, motor vehicles, or salary statements. Smallholder farmers own land collectively without deeds, blocking access.',
+      title: 'Banks say no without land deeds',
+      desc: "Commercial banks require property documents that smallholder farmers simply don't have. The system was never built for them.",
       icon: Ban,
     },
     {
-      title: 'Delayed Disbursals',
-      desc: 'Standard agricultural credit applications take 4 to 8 weeks. By the time loans are approved, planting cycles have passed, and yield margins are lost.',
+      title: 'Waiting months means missing the season',
+      desc: "Standard loan applications take 4 to 8 weeks. By the time funds arrive, the planting window has passed — and the harvest suffers.",
       icon: AlertTriangle,
     },
   ];
@@ -40,7 +40,7 @@ export function Problem() {
           >
             <div className="inline-flex items-center gap-2 text-xs font-bold font-mono text-brand-amber-600 dark:text-brand-amber-500 bg-brand-amber-500/10 border border-brand-amber-500/20 px-3 py-1 rounded-full">
               <ShieldAlert className="w-3.5 h-3.5 animate-pulse" />
-              THE REALITY FOR 500M SMALLHOLDERS
+              🌾 THE REALITY FARMERS FACE EVERY DAY
             </div>
             
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-text-primary tracking-tight leading-tight">
@@ -49,13 +49,13 @@ export function Problem() {
             
             <div className="space-y-4 text-text-secondary text-sm md:text-base leading-relaxed">
               <p>
-                Meet <strong className="font-semibold text-text-primary">Kofi Mensah</strong>, a cocoa farmer in the Ashanti region of Ghana. Every May, before the crop harvesting season begins, Kofi needs capital to purchase fertilizer, organic pesticides, and hire additional labor to ensure a healthy yield.
+                Meet <strong className="font-semibold text-text-primary">Kofi Mensah</strong>, a cocoa farmer in the Ashanti region of Ghana. Every May, before the harvesting season begins, Kofi needs money to buy fertilizer and hire extra hands to bring in a good crop.
               </p>
               <p>
-                Kofi does not own a car or have a formal salary. His farm is family-owned and lacks a single land registry deed. When he asks commercial banks for a small $150 credit to purchase farming supplies, he is immediately turned away.
+                Kofi doesn't own a car or have a formal salary. His family farm has no land registry document. When he asks the bank for a small loan to buy farming supplies, he is turned away immediately.
               </p>
               <p>
-                Left with no choice, Kofi borrows from informal lenders at <strong className="font-semibold text-text-primary">55% APY</strong>. When his cocoa is finally sold, over half of his total earnings are paid back in high interest, leaving him unable to save or invest for the next cycle.
+                Left with no choice, Kofi borrows from a local moneylender at <strong className="font-semibold text-text-primary">over 55% interest</strong>. When his cocoa finally sells, more than half of everything he earned goes straight back to repay the loan — leaving nothing to save or grow.
               </p>
             </div>
 
@@ -98,8 +98,8 @@ export function Problem() {
                   {/* Predatory rates bar */}
                   <div className="space-y-1.5">
                     <div className="flex justify-between text-xs font-semibold">
-                      <span className="text-text-secondary">Informal / Predatory APY</span>
-                      <span className="text-brand-amber-500">55% APY</span>
+                      <span className="text-text-secondary">Local Moneylenders</span>
+                      <span className="text-brand-amber-500">55% interest</span>
                     </div>
                     <div className="h-2 w-full bg-neutral-border/40 rounded-full overflow-hidden">
                       <motion.div
@@ -115,8 +115,8 @@ export function Problem() {
                   {/* Commercial bank rate bar */}
                   <div className="space-y-1.5">
                     <div className="flex justify-between text-xs font-semibold">
-                      <span className="text-text-secondary">Commercial Bank APY (Requires Collateral)</span>
-                      <span className="text-text-primary">35% APY</span>
+                      <span className="text-text-secondary">Commercial Banks (if you qualify)</span>
+                      <span className="text-text-primary">35% interest</span>
                     </div>
                     <div className="h-2 w-full bg-neutral-border/40 rounded-full overflow-hidden">
                       <motion.div
@@ -132,8 +132,8 @@ export function Problem() {
                   {/* BikkoChain rates bar */}
                   <div className="space-y-1.5">
                     <div className="flex justify-between text-xs font-bold text-brand-green-600 dark:text-brand-green-500">
-                      <span>BikkoChain Protocol APY (Yield Collateralized)</span>
-                      <span>15% APY</span>
+                      <span>With BikkoChain (your harvest is enough)</span>
+                      <span>15% interest</span>
                     </div>
                     <div className="h-2 w-full bg-neutral-border/40 rounded-full overflow-hidden">
                       <motion.div

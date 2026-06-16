@@ -7,18 +7,18 @@ import { PhoneCall, CheckSquare, Coins } from 'lucide-react';
 export function HowItWorks() {
   const stepsText = [
     {
-      title: '1. Register via Mobile',
-      desc: 'Farmers onboarding occurs directly through cooperatives using basic USSD codes or interactive WhatsApp chatbot flows.',
+      title: '1. Register',
+      desc: 'Sign up through your local cooperative or simply dial our shortcode on any phone. No data connection needed.',
       icon: PhoneCall,
     },
     {
-      title: '2. Quality Verification',
-      desc: 'Cooperatives inspect and certify harvest weight, moisture, and grade parameters, minting a secure digital token on the ledger.',
+      title: '2. Get Verified',
+      desc: 'Your cooperative confirms your crop amount and quality. The whole process is handled on your behalf — nothing technical for you to do.',
       icon: CheckSquare,
     },
     {
-      title: '3. Collateralized Payout',
-      desc: 'Smart contracts lock the token and release Cedis immediately to the farmer’s Mobile Money wallet, circumventing commercial banks.',
+      title: '3. Receive Cash',
+      desc: 'Once verified, Cedis land in your Mobile Money wallet in minutes. No bank visit, no paperwork, no waiting.',
       icon: Coins,
     },
   ];
@@ -29,12 +29,12 @@ export function HowItWorks() {
         
         {/* Section header */}
         <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
-          <span className="text-xs font-bold uppercase tracking-wider text-brand-green-500 font-mono">PRODUCT PREVIEW</span>
+          <span className="text-xs font-bold uppercase tracking-wider text-brand-green-500 font-mono">WORKS ON ANY PHONE</span>
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-text-primary tracking-tight">
-            How It Works in the Field
+            Access Your Loan From Any Phone
           </h2>
           <p className="text-text-secondary text-sm md:text-base leading-relaxed">
-            Our platform is designed for low-connectivity agricultural areas in Ghana, providing high-technology blockchain security via simple, zero-data mobile interfaces.
+            No bank visit. No paperwork. Whether you have a smartphone or a basic feature phone, BikkoChain works for you.
           </p>
         </div>
 

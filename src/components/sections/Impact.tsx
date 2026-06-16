@@ -12,24 +12,24 @@ export function Impact() {
   const regions = [
     {
       name: 'Ashanti Region',
-      stats: { farmers: '6,450+', volume: '720 Tons', disbursed: '5.2M GHS', defaults: '0.8%' },
+      stats: { farmers: '6,450+', volume: '720 Tons', disbursed: '5.2M GHS', onTime: '99.2%' },
       x: '55%',
       y: '65%',
-      desc: 'Our primary pilot zone containing the highest density of aggregated cocoa co-ops.',
+      desc: 'Our largest partner zone, home to the most active cocoa farming cooperatives in Ghana. Farmers here were the first to receive loans through BikkoChain.',
     },
     {
       name: 'Western Region',
-      stats: { farmers: '4,200+', volume: '510 Tons', disbursed: '3.6M GHS', defaults: '1.2%' },
+      stats: { farmers: '4,200+', volume: '510 Tons', disbursed: '3.6M GHS', onTime: '98.8%' },
       x: '30%',
       y: '80%',
-      desc: 'Rich forest canopy zones, optimized for verified deforestation-free cocoa tracking.',
+      desc: 'Rich cocoa-growing country with strong cooperative networks. Farmers here benefit from premium buyer access thanks to verified sustainable farming practices.',
     },
     {
       name: 'Eastern Region',
-      stats: { farmers: '1,850+', volume: '220 Tons', disbursed: '1.4M GHS', defaults: '0.5%' },
+      stats: { farmers: '1,850+', volume: '220 Tons', disbursed: '1.4M GHS', onTime: '99.5%' },
       x: '75%',
       y: '70%',
-      desc: 'Coffee farming cooperatives exploring microfinance tokenization testbeds.',
+      desc: 'Growing coffee cooperative communities in the eastern hills, where farmers are expanding their operations with fast, fair BikkoChain loans.',
     },
   ];
 
@@ -56,12 +56,12 @@ export function Impact() {
             transition={{ duration: 0.5 }}
             className="lg:col-span-5 space-y-6"
           >
-            <span className="text-xs font-bold uppercase tracking-wider text-brand-green-500 font-mono">PILOT HUBS</span>
+            <span className="text-xs font-bold uppercase tracking-wider text-brand-green-500 font-mono">WHERE WE WORK</span>
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-text-primary tracking-tight leading-tight">
-              Real-World Outcomes in Ghana
+              Helping Farmers Across Ghana
             </h2>
             <p className="text-text-secondary text-sm md:text-base leading-relaxed">
-              BikkoChain operates in active partnerships with registered crop cooperatives in the Ashanti, Western, and Eastern regions of Ghana. Click on the pilot region pins in the interactive map to review localized volumes, loan statistics, and default rates.
+              From the cocoa farms of Ashanti to the coffee hills of the East — real farmers, real change. Click a region to see local numbers.
             </p>
 
             {/* Display statistic detail boxes of the active region */}
@@ -102,9 +102,9 @@ export function Impact() {
                 <div className="space-y-1">
                   <div className="flex items-center gap-1.5 text-text-secondary">
                     <CheckCircle className="w-3.5 h-3.5 text-cyan-700 dark:text-brand-cyan" />
-                    <span className="text-[10px] font-bold uppercase tracking-wider font-mono">Defaults</span>
+                    <span className="text-[10px] font-bold uppercase tracking-wider font-mono">On-Time</span>
                   </div>
-                  <p className="text-base font-bold text-brand-green-600 dark:text-brand-green-500">{regions[selectedRegion].stats.defaults}</p>
+                  <p className="text-base font-bold text-brand-green-600 dark:text-brand-green-500">{regions[selectedRegion].stats.onTime}</p>
                 </div>
               </div>
             </div>

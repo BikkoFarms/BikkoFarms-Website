@@ -30,8 +30,8 @@ export function Navbar() {
   const navLinks = [
     { name: "Kofi's Story", href: '#story' },
     { name: 'How It Works', href: '#how-it-works' },
-    { name: 'Features', href: '#features' },
-    { name: 'Impact', href: '#impact' },
+    { name: 'How We Help', href: '#features' },
+    { name: 'Our Reach', href: '#impact' },
     { name: 'FAQ', href: '#faq' },
   ];
 
@@ -99,10 +99,10 @@ export function Navbar() {
               trackEvent({ action: 'click_partner_nav', category: 'Conversions' });
               document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
             }}>
-              Partner With Us
+              Join the Network
             </Button>
             <Button size="sm" onClick={handleDemoClick}>
-              Request a Demo
+              Get Started
               <ArrowRight className="w-4 h-4 ml-1" />
             </Button>
           </div>
@@ -160,10 +160,10 @@ export function Navbar() {
                   setIsOpen(false);
                 }}
               >
-                Partner With Us
+                Join the Network
               </Button>
               <Button className="w-full justify-center" onClick={handleDemoClick}>
-                Request a Demo
+                Get Started
                 <ArrowRight className="w-4 h-4 ml-1" />
               </Button>
             </div>
