@@ -22,7 +22,7 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
   const [error, setError] = React.useState('');
   const [loading, setLoading] = React.useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
 
@@ -32,10 +32,24 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
     setLoading(true);
     trackEvent({ action: 'waitlist_submit', category: 'Conversions', label: `Role: ${role} | Region: ${region}` });
 
-    setTimeout(() => {
+    try {
+      const res = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: name.trim(), phone: phone.trim() || null, email: email.trim() || null, role, region: region || null }),
+      });
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        setStep('success');
+      } else {
+        setError(data.error ?? 'Something went wrong. Please try again.');
+      }
+    } catch {
+      setError('Network error. Please check your connection and try again.');
+    } finally {
       setLoading(false);
-      setStep('success');
-    }, 1200);
+    }
   };
 
   const handleClose = () => {
