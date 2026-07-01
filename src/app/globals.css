@@ -175,11 +175,61 @@ body {
 }
 
 @media print {
-  body {
-    background: white !important;
-    color: black !important;
+  /* Override CSS custom properties for print context */
+  :root, html, html.dark, body {
+    --background: #ffffff !important;
+    --foreground: #000000 !important;
+    --card: #ffffff !important;
+    --border: #cccccc !important;
+    --text-primary: #000000 !important;
+    --text-secondary: #222222 !important;
+    --text-muted: #555555 !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    color: #000000 !important;
   }
-  
+
+  /* Reset all background highlights, gradients, and shadows */
+  * {
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    color-scheme: light !important;
+  }
+
+  /* Keep table borders and simple backgrounds visible */
+  table, tr, td, th {
+    border-color: #dddddd !important;
+    background-color: #ffffff !important;
+  }
+
+  th {
+    font-weight: bold !important;
+    background-color: #f5f5f5 !important;
+  }
+
+  /* Styling for tags and badges so they print nicely as outlined pills */
+  span[class*="bg-"], span[class*="text-"] {
+    background-color: #ffffff !important;
+    border: 1px solid #999999 !important;
+    color: #000000 !important;
+    padding: 1px 6px !important;
+    border-radius: 9999px !important;
+  }
+
+  /* Force background glows and visual clutter to be hidden */
+  .glow-blur, 
+  [class*="glow"], 
+  [class*="bg-brand-green-500/10"], 
+  [class*="bg-brand-amber-500/10"], 
+  [class*="bg-sky-500/10"],
+  [class*="bg-neutral-bg"],
+  [class*="bg-neutral-card"] {
+    background: none !important;
+    background-color: transparent !important;
+  }
+
   .print\:hidden {
     display: none !important;
   }
@@ -188,19 +238,21 @@ body {
     display: block !important;
   }
 
-  /* Table print layouts */
+  /* Table print layout structural rules */
   table {
     width: 100% !important;
     border-collapse: collapse !important;
   }
 
   th, td {
-    border-bottom: 1px solid #ddd !important;
-    padding: 8px !important;
+    border-bottom: 1px solid #dddddd !important;
+    padding: 8px 12px !important;
+    text-align: left !important;
   }
 
   tr {
     page-break-inside: avoid !important;
   }
 }
+
 
