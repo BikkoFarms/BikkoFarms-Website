@@ -79,6 +79,11 @@ export default function AdminDashboard() {
   const [regionFilter, setRegionFilter] = React.useState('');
   const [statusFilter, setStatusFilter] = React.useState('');
   const [exporting, setExporting] = React.useState<string | null>(null);
+  const [reportDate, setReportDate] = React.useState('');
+
+  React.useEffect(() => {
+    setReportDate(new Date().toLocaleString('en-GB'));
+  }, []);
   
   // Selection drawer state
   const [selectedEntry, setSelectedEntry] = React.useState<WaitlistEntry | null>(null);
@@ -264,7 +269,7 @@ export default function AdminDashboard() {
       {/* Printable Report Header */}
       <div className="hidden print:block mb-8 border-b border-black pb-4">
         <h1 className="text-2xl font-bold font-serif text-black">BikkoChain — Waitlist Registrants Export Report</h1>
-        <p className="text-xs text-neutral-600 mt-1">Generated: {new Date().toLocaleString('en-GB')}</p>
+        <p className="text-xs text-neutral-600 mt-1">Generated: {reportDate}</p>
         <p className="text-xs text-neutral-600">Total signups recorded: {data?.total ?? '—'}</p>
       </div>
 
