@@ -2,159 +2,165 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShieldAlert, AlertTriangle, Coins, Ban } from 'lucide-react';
+import { ShieldAlert, Coins, Ban, AlertTriangle } from 'lucide-react';
+import { Button } from '../ui/button';
+import { WaitlistModal } from './WaitlistModal';
+import { useAnalytics } from '../shared/Analytics';
 
 export function Problem() {
-  const painPoints = [
+  const { trackEvent } = useAnalytics();
+  const [modalOpen, setModalOpen] = React.useState(false);
+
+  const storyBeats = [
     {
-      title: 'Loan sharks charge crippling rates',
-      desc: "Local moneylenders charge over 55% in interest — meaning more than half of a farmer's harvest earnings go straight back in repayments.",
-      icon: Coins,
+      time: 'Every May',
+      text: "Kofi Mensah walks to the nearest bank in Kumasi. He needs ₵2,000 to buy fertilizer before the planting window closes. He's been farming cocoa for 15 years. His farm is healthy. His harvest is good. He just needs a small loan to get started.",
+      mood: 'hopeful',
     },
     {
-      title: 'Banks say no without land deeds',
-      desc: "Commercial banks require property documents that smallholder farmers simply don't have. The system was never built for them.",
-      icon: Ban,
+      time: 'The Bank Says No',
+      text: "The loan officer asks for a land deed. Kofi's family has farmed this land for three generations — but it has no formal title. Without a deed, there's no loan. Kofi walks home empty-handed. The planting season is already slipping away.",
+      mood: 'hard',
     },
     {
-      title: 'Waiting months means missing the season',
-      desc: "Standard loan applications take 4 to 8 weeks. By the time funds arrive, the planting window has passed — and the harvest suffers.",
-      icon: AlertTriangle,
+      time: 'The Only Option Left',
+      text: "Kofi finds a local moneylender. The terms: 55% interest. He has no choice. He borrows anyway. When the cocoa finally sells in November, more than half of everything he earned goes straight back. After 15 years of farming, he finishes the season with almost nothing to show for it.",
+      mood: 'dark',
+    },
+    {
+      time: 'With BikkoChain',
+      text: "This year is different. Kofi's cooperative uses BikkoChain. His harvest is verified and accepted as security. Within minutes, ₵2,000 lands in his MTN wallet. He plants on time. The harvest is his best in years. The loan repays automatically when the crop sells — at 15% interest, not 55%.",
+      mood: 'bright',
     },
   ];
 
-  return (
-    <section id="story" className="py-24 relative bg-neutral-card/20 border-t border-neutral-border/40 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-        
-        {/* Layout grid: Storytelling vs Painpoints list */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
-          {/* Storytelling - Kofi's Journey */}
-          <motion.div
-            initial={{ opacity: 0, x: -25 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-6 space-y-6"
-          >
-            <div className="inline-flex items-center gap-2 text-xs font-bold font-mono text-brand-amber-600 dark:text-brand-amber-500 bg-brand-amber-500/10 border border-brand-amber-500/20 px-3 py-1 rounded-full">
-              <ShieldAlert className="w-3.5 h-3.5 animate-pulse" />
-              🌾 THE REALITY FARMERS FACE EVERY DAY
-            </div>
-            
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-text-primary tracking-tight leading-tight">
-              {"Kofi's Cycle: A Story of Credit Exclusion"}
-            </h2>
-            
-            <div className="space-y-4 text-text-secondary text-sm md:text-base leading-relaxed">
-              <p>
-                Meet <strong className="font-semibold text-text-primary">Kofi Mensah</strong>, a cocoa farmer in the Ashanti region of Ghana. Every May, before the harvesting season begins, Kofi needs money to buy fertilizer and hire extra hands to bring in a good crop.
-              </p>
-              <p>
-                Kofi doesn't own a car or have a formal salary. His family farm has no land registry document. When he asks the bank for a small loan to buy farming supplies, he is turned away immediately.
-              </p>
-              <p>
-                Left with no choice, Kofi borrows from a local moneylender at <strong className="font-semibold text-text-primary">over 55% interest</strong>. When his cocoa finally sells, more than half of everything he earned goes straight back to repay the loan — leaving nothing to save or grow.
-              </p>
-            </div>
+  const moodStyles: Record<string, string> = {
+    hopeful: 'border-brand-green-500/30 bg-brand-green-500/5',
+    hard: 'border-brand-amber-500/30 bg-brand-amber-500/5',
+    dark: 'border-red-500/20 bg-red-500/4',
+    bright: 'border-brand-green-500/50 bg-brand-green-500/10',
+  };
 
-            {/* Quick quote block */}
-            <div className="border-l-4 border-brand-amber-500 pl-4 py-1 italic text-text-primary text-sm font-medium">
-              "We work hard all season, but the high interest takes everything. We borrow just to buy seeds, but we cannot grow."
-              <span className="block text-xs text-text-secondary mt-1 font-sans not-italic font-semibold">— Kofi Mensah, Ashanti Cocoa Farmer</span>
+  const moodTimeStyles: Record<string, string> = {
+    hopeful: 'text-brand-green-600 dark:text-brand-green-400',
+    hard: 'text-brand-amber-600 dark:text-brand-amber-500',
+    dark: 'text-red-500 dark:text-red-400',
+    bright: 'text-brand-green-600 dark:text-brand-green-400',
+  };
+
+  return (
+    <>
+      <WaitlistModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+
+      <section id="story" className="py-28 relative overflow-hidden">
+        {/* Subtle background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-amber-500/3 to-transparent pointer-events-none" />
+
+        <div className="max-w-4xl mx-auto px-6 relative z-10">
+
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center space-y-4 mb-20"
+          >
+            <div className="inline-flex items-center gap-2 text-xs font-bold font-mono text-brand-amber-600 dark:text-brand-amber-500 bg-brand-amber-500/10 border border-brand-amber-500/20 px-3 py-1.5 rounded-full">
+              <ShieldAlert className="w-3.5 h-3.5" />
+              🌾 A STORY REPEATED 500 MILLION TIMES A YEAR
             </div>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-text-primary leading-tight tracking-tight">
+              {"Kofi's Story"}
+            </h2>
+            <p className="text-base md:text-lg text-text-secondary leading-relaxed max-w-xl mx-auto">
+              His story is not unusual. It is the story of almost every smallholder farmer in Ghana. Until now.
+            </p>
           </motion.div>
 
-          {/* Pain points grid & Comparison Card */}
+          {/* Story Timeline */}
+          <div className="relative">
+            {/* Vertical line */}
+            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-green-500/30 via-brand-amber-500/30 to-brand-green-500/50 hidden md:block" />
+
+            <div className="space-y-8">
+              {storyBeats.map((beat, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: '-80px' }}
+                  transition={{ duration: 0.5, delay: idx * 0.08 }}
+                  className="md:pl-16 relative"
+                >
+                  {/* Timeline dot */}
+                  <div className={`absolute left-3.5 top-5 w-5 h-5 rounded-full border-2 hidden md:flex items-center justify-center ${
+                    beat.mood === 'bright' ? 'border-brand-green-500 bg-brand-green-500' : 'border-neutral-border bg-neutral-card'
+                  }`}>
+                    {beat.mood === 'bright' && <span className="text-white text-[8px]">✓</span>}
+                  </div>
+
+                  <div className={`border rounded-2xl p-6 md:p-8 transition-all duration-300 hover:shadow-md ${moodStyles[beat.mood]}`}>
+                    <p className={`text-xs font-bold font-mono uppercase tracking-widest mb-3 ${moodTimeStyles[beat.mood]}`}>
+                      {beat.time}
+                    </p>
+                    <p className={`text-base md:text-lg leading-relaxed ${
+                      beat.mood === 'bright' ? 'text-text-primary font-medium' : 'text-text-secondary'
+                    }`}>
+                      {beat.text}
+                    </p>
+                    {beat.mood === 'bright' && (
+                      <div className="mt-5 flex flex-col sm:flex-row gap-3 items-start sm:items-center">
+                        <Button
+                          onClick={() => {
+                            trackEvent({ action: 'open_waitlist_modal', category: 'Conversions', label: "Kofi's Story CTA" });
+                            setModalOpen(true);
+                          }}
+                          className="text-sm"
+                        >
+                          This should be your story too — Join the Waitlist
+                        </Button>
+                      </div>
+                    )}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* The contrast bar */}
           <motion.div
-            initial={{ opacity: 0, x: 25 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-6 space-y-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-20 bg-neutral-card border border-neutral-border rounded-3xl p-8 space-y-6"
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {painPoints.map((point, idx) => {
-                const Icon = point.icon;
+            <h3 className="text-center text-xl font-serif font-bold text-text-primary">The Difference BikkoChain Makes</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { icon: Coins, before: 'Loan sharks: 55%+ interest', after: 'BikkoChain: 15% fair rate', color: 'text-brand-amber-500' },
+                { icon: Ban, before: 'Banks: Land deed required', after: 'BikkoChain: Your harvest is enough', color: 'text-red-400' },
+                { icon: AlertTriangle, before: 'Traditional loans: 4–8 weeks', after: 'BikkoChain: Under 2 minutes', color: 'text-brand-amber-600' },
+              ].map((item, i) => {
+                const Icon = item.icon;
                 return (
-                  <div key={idx} className="bg-neutral-card border border-neutral-border p-5 rounded-xl space-y-3 shadow-sm hover:border-brand-amber-500/30 transition-all duration-300 hover:scale-[1.01]">
-                    <div className="w-9 h-9 rounded-lg bg-brand-amber-500/10 border border-brand-amber-500/20 flex items-center justify-center text-brand-amber-500">
-                      <Icon className="w-4 h-4" />
+                  <div key={i} className="space-y-3">
+                    <div className="flex items-center gap-2">
+                      <Icon className={`w-4 h-4 ${item.color}`} />
+                      <span className="text-xs font-bold text-text-muted uppercase tracking-wider font-mono">Before</span>
                     </div>
-                    <h4 className="font-semibold text-text-primary text-sm tracking-tight">{point.title}</h4>
-                    <p className="text-xs text-text-secondary leading-relaxed">{point.desc}</p>
+                    <p className="text-sm text-text-secondary line-through opacity-70">{item.before}</p>
+                    <div className="h-px bg-neutral-border/40" />
+                    <p className="text-sm font-semibold text-brand-green-600 dark:text-brand-green-400">✓ {item.after}</p>
                   </div>
                 );
               })}
-              
-              {/* Financial comparison visual stats */}
-              <div className="bg-neutral-card border border-neutral-border p-6 rounded-xl space-y-6 shadow-sm sm:col-span-2 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-24 h-24 rounded-full bg-brand-amber-500/5 glow-blur" />
-                
-                <h4 className="font-semibold text-text-primary text-sm tracking-tight border-b border-neutral-border/40 pb-2">The Financial Contrast</h4>
-                
-                <div className="space-y-4">
-                  {/* Predatory rates bar */}
-                  <div className="space-y-1.5">
-                    <div className="flex justify-between text-xs font-semibold">
-                      <span className="text-text-secondary">Local Moneylenders</span>
-                      <span className="text-brand-amber-500">55% interest</span>
-                    </div>
-                    <div className="h-2 w-full bg-neutral-border/40 rounded-full overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: '55%' }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, ease: 'easeOut' }}
-                        className="h-full bg-brand-amber-500 rounded-full"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Commercial bank rate bar */}
-                  <div className="space-y-1.5">
-                    <div className="flex justify-between text-xs font-semibold">
-                      <span className="text-text-secondary">Commercial Banks (if you qualify)</span>
-                      <span className="text-text-primary">35% interest</span>
-                    </div>
-                    <div className="h-2 w-full bg-neutral-border/40 rounded-full overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: '35%' }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, ease: 'easeOut' }}
-                        className="h-full bg-text-primary rounded-full"
-                      />
-                    </div>
-                  </div>
-
-                  {/* BikkoChain rates bar */}
-                  <div className="space-y-1.5">
-                    <div className="flex justify-between text-xs font-bold text-brand-green-600 dark:text-brand-green-500">
-                      <span>With BikkoChain (your harvest is enough)</span>
-                      <span>15% interest</span>
-                    </div>
-                    <div className="h-2 w-full bg-neutral-border/40 rounded-full overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: '15%' }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, ease: 'easeOut' }}
-                        className="h-full bg-brand-green-500 rounded-full"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
             </div>
           </motion.div>
 
         </div>
-
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

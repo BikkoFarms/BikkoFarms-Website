@@ -2,29 +2,24 @@
 
 import * as React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowRight, Sprout, Activity } from 'lucide-react';
+import { Menu, X, ArrowRight, Sprout } from 'lucide-react';
 import { ThemeToggle } from '../ui/theme-toggle';
 import { Button } from '../ui/button';
 import { useAnalytics } from '../shared/Analytics';
+import { WaitlistModal } from '../sections/WaitlistModal';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const [modalOpen, setModalOpen] = React.useState(false);
   const { trackEvent } = useAnalytics();
 
   React.useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
@@ -35,21 +30,16 @@ export function Navbar() {
     { name: 'FAQ', href: '#faq' },
   ];
 
-  const handleDemoClick = () => {
-    trackEvent({
-      action: 'click_request_demo_nav',
-      category: 'Conversions',
-      label: 'Request Demo from Navbar Header',
-    });
-    const el = document.getElementById('contact');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
+  const openModal = (label: string) => {
+    trackEvent({ action: 'open_waitlist_modal', category: 'Conversions', label });
+    setModalOpen(true);
     setIsOpen(false);
   };
 
   return (
     <>
+      <WaitlistModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+
       <header
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           isScrolled
@@ -92,22 +82,16 @@ export function Navbar() {
             ))}
           </nav>
 
-          {/* Actions */}
-          <div className="hidden md:flex items-center gap-4">
+          {/* Desktop Actions */}
+          <div className="hidden md:flex items-center gap-3">
             <ThemeToggle />
-            <Button variant="outline" size="sm" onClick={() => {
-              trackEvent({ action: 'click_partner_nav', category: 'Conversions' });
-              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-            }}>
-              Join the Network
-            </Button>
-            <Button size="sm" onClick={handleDemoClick}>
-              Get Started
+            <Button size="sm" onClick={() => openModal('Navbar CTA')}>
+              Join Waitlist
               <ArrowRight className="w-4 h-4 ml-1" />
             </Button>
           </div>
 
-          {/* Mobile Navigation Toggle */}
+          {/* Mobile Toggle */}
           <div className="flex md:hidden items-center gap-2">
             <ThemeToggle />
             <button
@@ -152,20 +136,13 @@ export function Navbar() {
 
             <div className="flex flex-col gap-4 pb-12">
               <Button
-                variant="outline"
-                className="w-full justify-center"
-                onClick={() => {
-                  trackEvent({ action: 'click_mobile_partner', category: 'Conversions' });
-                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                  setIsOpen(false);
-                }}
+                className="w-full justify-center h-14 text-base"
+                onClick={() => openModal('Mobile Nav CTA')}
               >
-                Join the Network
+                Join the Waitlist — It's Free
+                <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
-              <Button className="w-full justify-center" onClick={handleDemoClick}>
-                Get Started
-                <ArrowRight className="w-4 h-4 ml-1" />
-              </Button>
+              <p className="text-center text-xs text-text-muted">12,500+ farmers already on the list</p>
             </div>
           </motion.div>
         )}

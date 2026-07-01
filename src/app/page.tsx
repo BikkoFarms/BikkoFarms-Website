@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar } from '../components/layout/Navbar';
+import { FloatingWaitlistBar } from '../components/layout/FloatingWaitlistBar';
 import { Hero } from '../components/sections/Hero';
 import { TrustSignals } from '../components/marketing/TrustSignals';
 import { Problem } from '../components/sections/Problem';
@@ -18,35 +19,38 @@ export default function Home() {
       {/* Sticky Header Nav */}
       <Navbar />
 
+      {/* Scroll-triggered floating waitlist bar */}
+      <FloatingWaitlistBar />
+
       <main className="flex-grow">
-        {/* Hero Banner Grid Section */}
+        {/* Story-first Hero with waitlist CTA */}
         <Hero />
 
         {/* Brand Partnerships & Trust Badging */}
         <TrustSignals />
 
-        {/* Problem Story (Kofi Mensah Cocoa Farm) */}
+        {/* Kofi's Story — Narrative Timeline */}
         <Problem />
 
-        {/* Five Step Core Pipeline Timeline Map */}
+        {/* Five Step Process */}
         <Solution />
 
-        {/* How It Works & Live Interactive Dashboard Simulation */}
+        {/* How It Works & Phone Demo */}
         <HowItWorks />
 
-        {/* Feature Grid Catalog */}
+        {/* Feature Grid */}
         <Features />
 
-        {/* Metrics outcome dashboard */}
+        {/* Regional Impact Map */}
         <Impact />
 
-        {/* Pilot user quotes */}
+        {/* Farmer Testimonials */}
         <Testimonials />
 
-        {/* Expandable FAQs Accordion */}
+        {/* FAQ */}
         <Faq />
 
-        {/* Final Conversion Form Trigger */}
+        {/* Final Waitlist CTA — two-column story card */}
         <CTASection />
       </main>
 
