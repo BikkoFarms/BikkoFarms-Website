@@ -18,10 +18,13 @@ model WaitlistEntry {
   email     String?
   role      String   @default("farmer")
   region    String?
+  status    String   @default("pending")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@index([createdAt])
   @@index([region])
   @@index([role])
+  @@index([status])
 }
+

@@ -173,3 +173,34 @@ body {
     background-position: 0 55px;
   }
 }
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .print\:hidden {
+    display: none !important;
+  }
+
+  .print\:block {
+    display: block !important;
+  }
+
+  /* Table print layouts */
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  th, td {
+    border-bottom: 1px solid #ddd !important;
+    padding: 8px !important;
+  }
+
+  tr {
+    page-break-inside: avoid !important;
+  }
+}
+

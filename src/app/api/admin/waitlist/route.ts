@@ -23,6 +23,7 @@ export async function GET(request: NextRequest) {
     const search = searchParams.get('search')?.trim() ?? '';
     const role = searchParams.get('role') ?? '';
     const region = searchParams.get('region') ?? '';
+    const status = searchParams.get('status') ?? '';
 
     const where = {
       ...(search && {
@@ -34,6 +35,7 @@ export async function GET(request: NextRequest) {
       }),
       ...(role && { role }),
       ...(region && { region }),
+      ...(status && { status }),
     };
 
     const [entries, total] = await Promise.all([
@@ -46,10 +48,22 @@ export async function GET(request: NextRequest) {
       prisma.waitlistEntry.count({ where }),
     ]);
 
-    // Summary stats
-    const stats = await prisma.waitlistEntry.groupBy({
+    // Summary stats (by role)
+    const roleStats = await prisma.waitlistEntry.groupBy({
       by: ['role'],
       _count: { role: true },
+    });
+
+    // Summary stats (by status)
+    const statusStats = await prisma.waitlistEntry.groupBy({
+      by: ['status'],
+      _count: { status: true },
+    });
+
+    // Summary stats (by region)
+    const regionStats = await prisma.waitlistEntry.groupBy({
+      by: ['region'],
+      _count: { region: true },
     });
 
     return Response.json({
@@ -57,10 +71,64 @@ export async function GET(request: NextRequest) {
       total,
       page,
       pages: Math.ceil(total / limit),
-      stats,
+      stats: roleStats,
+      statusStats,
+      regionStats,
     });
   } catch (error) {
     console.error('[admin/waitlist GET]', error);
     return Response.json({ error: 'Server error.' }, { status: 500 });
+  }
+}
+
+export async function PATCH(request: Request) {
+  if (!(await verifyAdmin())) {
+    return Response.json({ error: 'Unauthorized.' }, { status: 401 });
+  }
+
+  try {
+    const { id, status } = await request.json();
+    if (!id || !status) {
+      return Response.json({ error: 'ID and Status are required.' }, { status: 400 });
+    }
+
+    const updated = await prisma.waitlistEntry.update({
+      where: { id },
+      data: { status },
+    });
+
+    return Response.json({ success: true, entry: updated });
+  } catch (error) {
+    console.error('[admin/waitlist PATCH]', error);
+    return Response.json({ error: 'Failed to update status.' }, { status: 500 });
+  }
+}
+
+export async function DELETE(request: NextRequest) {
+  if (!(await verifyAdmin())) {
+    return Response.json({ error: 'Unauthorized.' }, { status: 401 });
+  }
+
+  try {
+    const { searchParams } = request.nextUrl;
+    let id = searchParams.get('id');
+
+    if (!id) {
+      const body = await request.json().catch(() => ({}));
+      id = body.id;
+    }
+
+    if (!id) {
+      return Response.json({ error: 'ID is required.' }, { status: 400 });
+    }
+
+    await prisma.waitlistEntry.delete({
+      where: { id },
+    });
+
+    return Response.json({ success: true, message: 'Entry deleted successfully.' });
+  } catch (error) {
+    console.error('[admin/waitlist DELETE]', error);
+    return Response.json({ error: 'Failed to delete entry.' }, { status: 500 });
   }
 }

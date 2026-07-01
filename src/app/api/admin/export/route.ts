@@ -29,6 +29,7 @@ export async function GET(request: NextRequest) {
         email: true,
         role: true,
         region: true,
+        status: true,
         createdAt: true,
       },
     });
@@ -40,6 +41,7 @@ export async function GET(request: NextRequest) {
       Email: e.email ?? '',
       Role: e.role,
       Region: e.region ?? '',
+      Status: e.status,
       'Joined At': e.createdAt.toISOString(),
     }));
 
@@ -73,6 +75,7 @@ export async function GET(request: NextRequest) {
         { wch: 28 }, // Email
         { wch: 14 }, // Role
         { wch: 20 }, // Region
+        { wch: 12 }, // Status
         { wch: 22 }, // Joined At
       ];
       XLSX.utils.book_append_sheet(wb, ws, 'Waitlist');
