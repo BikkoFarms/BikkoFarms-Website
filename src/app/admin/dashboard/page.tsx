@@ -499,7 +499,7 @@ export default function AdminDashboard() {
             ) : (
               <>
                 {/* Desktop Table View */}
-                <div className="hidden md:block overflow-x-auto">
+                <div className="hidden md:block print:block overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-neutral-border bg-neutral-bg/60 print:bg-white print:border-black">
